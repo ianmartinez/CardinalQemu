@@ -1,0 +1,54 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/CardinalLib.csproj": {}
+  },
+  "projects": {
+    "/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/CardinalLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/CardinalLib.csproj",
+        "projectName": "CardinalLib",
+        "projectPath": "/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/CardinalLib.csproj",
+        "packagesPath": "/Users/ianmartinez/.nuget/packages/",
+        "outputPath": "/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ianmartinez/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.6"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.6": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard1.6": {
+          "dependencies": {
+            "Eto.Forms": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

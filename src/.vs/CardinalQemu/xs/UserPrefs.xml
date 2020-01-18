@@ -1,0 +1,44 @@
+﻿<Properties StartupConfiguration="{3C9EBF40-0B9E-4E2F-9732-2B8BA2257C8A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CardinalLib/Machine/ByteValue.cs">
+    <Files>
+      <File FileName="CardinalQemu/MainForm.cs" Line="3" Column="19" />
+      <File FileName="CardinalQemu.Gtk/Program.cs" />
+      <File FileName="CardinalQemu.XamMac/Info.plist" />
+      <File FileName="CardinalQemu.XamMac/Program.cs" Line="1" Column="14" />
+      <File FileName="CardinalQemu/AppInfo.cs" />
+      <File FileName="CardinalQemu.Wpf/Program.cs" Line="1" Column="1" />
+      <File FileName="CardinalLib/Machine/ByteValue.cs" Line="17" Column="93" />
+      <File FileName="CardinalLib/Machine/ByteFormat.cs" Line="3" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CardinalQemu" expanded="True">
+            <Node name="CardinalLib" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="SdkDependencies" expanded="True" />
+              </Node>
+              <Node name="Machine" expanded="True">
+                <Node name="ByteValue.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="CardinalQemu" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+            <Node name="CardinalQemu.Gtk" expanded="True" />
+            <Node name="CardinalQemu.Wpf" expanded="True" />
+            <Node name="CardinalQemu.XamMac" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CardinalQemu.Gtk PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CardinalQemu.XamMac PreferredExecutionTarget="Test1" />
+</Properties>

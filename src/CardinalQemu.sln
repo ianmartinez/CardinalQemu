@@ -1,0 +1,48 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardinalQemu", "CardinalQemu\CardinalQemu.csproj", "{0E1931E7-6C06-4C99-9C8B-67A0BF34B9BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardinalQemu.Gtk", "CardinalQemu.Gtk\CardinalQemu.Gtk.csproj", "{342FE856-EF07-455A-A781-DF52E563A6DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardinalQemu.Wpf", "CardinalQemu.Wpf\CardinalQemu.Wpf.csproj", "{6816FAFC-7A45-4F9B-B1FC-574B850A547C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardinalQemu.XamMac", "CardinalQemu.XamMac\CardinalQemu.XamMac.csproj", "{3C9EBF40-0B9E-4E2F-9732-2B8BA2257C8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardinalLib", "CardinalLib\CardinalLib.csproj", "{6BA1F4A4-94CF-4AC1-82AC-6B33E2642C64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E1931E7-6C06-4C99-9C8B-67A0BF34B9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1931E7-6C06-4C99-9C8B-67A0BF34B9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1931E7-6C06-4C99-9C8B-67A0BF34B9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1931E7-6C06-4C99-9C8B-67A0BF34B9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{342FE856-EF07-455A-A781-DF52E563A6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342FE856-EF07-455A-A781-DF52E563A6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342FE856-EF07-455A-A781-DF52E563A6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{342FE856-EF07-455A-A781-DF52E563A6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6816FAFC-7A45-4F9B-B1FC-574B850A547C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6816FAFC-7A45-4F9B-B1FC-574B850A547C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6816FAFC-7A45-4F9B-B1FC-574B850A547C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6816FAFC-7A45-4F9B-B1FC-574B850A547C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9EBF40-0B9E-4E2F-9732-2B8BA2257C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9EBF40-0B9E-4E2F-9732-2B8BA2257C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9EBF40-0B9E-4E2F-9732-2B8BA2257C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9EBF40-0B9E-4E2F-9732-2B8BA2257C8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BA1F4A4-94CF-4AC1-82AC-6B33E2642C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BA1F4A4-94CF-4AC1-82AC-6B33E2642C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BA1F4A4-94CF-4AC1-82AC-6B33E2642C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BA1F4A4-94CF-4AC1-82AC-6B33E2642C64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47857121-F23B-4FD1-B3FD-23A0B03BB92D}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <RootNamespace>CardinalQemu</RootNamespace>
+    <PackageVersion>1.0</PackageVersion>
+    <Title>CardinalQemu</Title>
+    <Copyright>Copyright © 2020</Copyright>
+    <Description>Description of CardinalQemu</Description>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Eto.Forms" Version="2.4.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\CardinalLib\CardinalLib.csproj" />
+  </ItemGroup>
+</Project>
