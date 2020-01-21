@@ -1,0 +1,8 @@
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/obj/Debug/netstandard2.0/CardinalLib.csprojAssemblyReference.cache
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/obj/Debug/netstandard2.0/CardinalLib.AssemblyInfoInputs.cache
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/obj/Debug/netstandard2.0/CardinalLib.AssemblyInfo.cs
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/bin/Debug/netstandard2.0/CardinalLib.deps.json
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/bin/Debug/netstandard2.0/CardinalLib.dll
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/bin/Debug/netstandard2.0/CardinalLib.pdb
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/obj/Debug/netstandard2.0/CardinalLib.dll
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/obj/Debug/netstandard2.0/CardinalLib.pdb

@@ -9,7 +9,5 @@ namespace CardinalQemu.XamMac
 		{
 			new Application(Eto.Platforms.XamMac2).Run(new MainForm());
 		}
-
-
 	}
 }

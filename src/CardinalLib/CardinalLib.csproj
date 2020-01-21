@@ -1,9 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Eto.Forms" Version="2.4.1" />
   </ItemGroup>
@@ -13,6 +19,9 @@
     <Compile Remove="Native\INativeControlManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Hardware\" />
     <Folder Include="Machine\" />
+    <Folder Include="Host\" />
   </ItemGroup>
 </Project>

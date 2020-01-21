@@ -1,6 +1,9 @@
 using System;
 using Eto.Forms;
 using Eto.Drawing;
+using System.Diagnostics;
+using CardinalLib.Host;
+using System.Threading;
 
 namespace CardinalQemu
 {
@@ -94,7 +97,12 @@ namespace CardinalQemu
         // File Menu
         public void OnNew(object sender, EventArgs e)
         {
+            var ppc = new Thread(() => Shell.Execute(new ShellCommand
+            {
+                Executable = "qemu-system-ppc"
+            }));
 
+            ppc.Start();
         }
 
         // Application Menu

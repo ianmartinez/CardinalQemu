@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>CardinalQemu</RootNamespace>
     <PackageVersion>1.0</PackageVersion>
     <Title>CardinalQemu</Title>
@@ -9,6 +9,12 @@
     <Description>Description of CardinalQemu</Description>
   </PropertyGroup>
   
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Eto.Forms" Version="2.4.1" />
   </ItemGroup>

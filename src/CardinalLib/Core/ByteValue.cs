@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CardinalLib.Machine
+namespace CardinalLib.Core
 {
     /// <summary>
     /// Handles the conversion between bytes, kilobytes, megabytes, and 
@@ -43,7 +43,7 @@ namespace CardinalLib.Machine
         /// <summary>
         /// The number base (1000/1024)
         /// </summary>
-        public double Base { get; set; }
+        public int Base { get; set; }
 
         /// <summary>
         /// Get the value as bytes
@@ -206,6 +206,20 @@ namespace CardinalLib.Machine
         }
 
         /// <summary>
+        /// Calls the static Format() function, passing this.Bytes as the variable
+        /// for value and defaulting the numBase to the Base for this ByteValue.
+        /// </summary>
+        /// 
+        /// <param name="format">The format needed</param>
+        /// <param name="numBase">Optional, defaults to the current Base</param>
+        /// 
+        /// <returns>The formatted value</returns>
+        public string Format(ByteFormat format, int numBase = -1)
+        {
+            return ByteValue.Format(Bytes, format, (numBase == -1) ? Base : numBase);
+        }
+
+        /// <summary>
         /// Formats a value to a string, such as 10 MB
         /// </summary>
         /// 
@@ -214,7 +228,7 @@ namespace CardinalLib.Machine
         /// <param name="format">The format needed for calculations</param>
         /// 
         /// <returns>The formatted value</returns>
-        public static string Format(double value, int numBase, ByteFormat format)
+        public static string Format(double value, ByteFormat format, int numBase = 1024)
         {
             string formatted = value.ToString() + " ";
 
