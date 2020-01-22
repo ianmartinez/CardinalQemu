@@ -34,6 +34,16 @@ namespace CardinalLib.Host
         public ShellCommand() { }
 
         /// <summary>
+        /// Create a ShellCommand with no arguments, just the executable
+        /// </summary>
+        /// 
+        /// <param name="executable">The executable to run</param>
+        public ShellCommand(string executable)
+        {
+            Executable = executable;
+        }
+
+        /// <summary>
         /// Create a ShellCommand with a single argument
         /// </summary>
         /// 

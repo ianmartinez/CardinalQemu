@@ -17,6 +17,11 @@ namespace CardinalLib.Host
         public static string Name => SystemInfo.IsUnix ? "sh" : "cmd.exe";
 
         /// <summary>
+        /// The host shell's app to lookup other apps
+        /// </summary>
+        public static string LookupApp => SystemInfo.IsUnix ? "which" : "where";
+
+        /// <summary>
         /// The command argument after the shell name for the host shell
         /// </summary>
         public static string CommandArg => SystemInfo.IsUnix ? "-c" : "/c";
@@ -54,10 +59,10 @@ namespace CardinalLib.Host
 
             // Change the working directory if it has been customized
             var cdCommand = (command.ChangeDirectory) ?
-                string.Format(" cd {0} && ", ShellSanitize(command.WorkingDirectory)) : " ";
+                string.Format(" cd {0} && ", ShellSanitize(command.WorkingDirectory)) : "";
 
             // Form arguments string + command arg, so on Unix, -c arg1 arg2 arg3 arg_n
-            var argumentsString = string.Format("{0} \"{1}{2}{3}\"",
+            var argumentsString = string.Format("{0} \"{1}{2} {3}\"",
                                                 CommandArg,
                                                 cdCommand,
                                                 command.Executable,

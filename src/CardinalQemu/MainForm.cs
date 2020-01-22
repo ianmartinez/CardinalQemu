@@ -4,6 +4,8 @@ using Eto.Drawing;
 using System.Diagnostics;
 using CardinalLib.Host;
 using System.Threading;
+using CardinalLib.Qemu;
+using CardinalLib.Hardware;
 
 namespace CardinalQemu
 {
@@ -97,12 +99,8 @@ namespace CardinalQemu
         // File Menu
         public void OnNew(object sender, EventArgs e)
         {
-            var ppc = new Thread(() => Shell.Execute(new ShellCommand
-            {
-                Executable = "qemu-system-ppc"
-            }));
-
-            ppc.Start();
+            var panther = new Disk("/Users/ianmartinez/CardinalMachines/Disks/panther.qcow", "hda");
+            var badDisk = new Disk("/Users/ianmartinez/CardinalMachines/Disks/bad_disk.qcow", "hda");
         }
 
         // Application Menu
