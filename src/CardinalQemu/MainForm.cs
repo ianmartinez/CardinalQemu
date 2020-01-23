@@ -97,6 +97,7 @@ namespace CardinalQemu
                 MenuText = "Start Machine",
                 ToolBarText = "Start"
             };
+            startCommand.Executed += OnStart;
 
             var refreshCommand = new Command
             {
@@ -122,15 +123,19 @@ namespace CardinalQemu
                 Items =
                 {
                     new ButtonMenuItem {
-                        Text = "&File",
-                        Items = { newCommand }
+                        Text = "&Machine",
+                        Items = {
+                            newCommand,
+                            startCommand
+                        }
                     }
                 },
                 ApplicationItems =
                 {
-                    
+
                 },
-                QuitItem = quitCommand
+                QuitItem = quitCommand,
+                IncludeSystemItems = MenuBarSystemItems.None                
             };
 
             // Toolbar		
@@ -154,10 +159,20 @@ namespace CardinalQemu
          * Event handlers
          */
 
-        // File Menu
+        // Machine Menu
         public void OnNew(object sender, EventArgs e)
         {
             MessageBox.Show(string.Join("\n", QemuData.ArchNames));
+        }
+
+        public async void OnStart(object sender, EventArgs e)
+        {
+            var state = await QemuApps.Get("qemu-system-ppc").RunAsync();
+
+            if(state.HasErrors)
+            {
+
+            }
         }
 
         // Application Menu
