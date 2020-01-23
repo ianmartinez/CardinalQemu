@@ -25,6 +25,7 @@ namespace CardinalQemu
         public MainForm()
         {
             Title = appTitle;
+            MinimumSize = new Size(500, 300);
             ClientSize = new Size(700, 500);
 
             // Page Selector
@@ -67,6 +68,54 @@ namespace CardinalQemu
             };
             newCommand.Executed += OnNew;
 
+            var importCommand = new Command
+            {
+                MenuText = "Import Machine",
+                ToolBarText = "Import"
+            };
+
+            var exportCommand = new Command
+            {
+                MenuText = "Export Machine",
+                ToolBarText = "Export"
+            };
+
+            var cloneCommand = new Command
+            {
+                MenuText = "Clone Machine",
+                ToolBarText = "Clone"
+            };
+
+            var deleteCommand = new Command
+            {
+                MenuText = "Delete Machine",
+                ToolBarText = "Delete"
+            };
+
+            var startCommand = new Command
+            {
+                MenuText = "Start Machine",
+                ToolBarText = "Start"
+            };
+
+            var refreshCommand = new Command
+            {
+                MenuText = "Refresh Machine",
+                ToolBarText = "Refresh"
+            };
+
+            var disksCommand = new Command
+            {
+                MenuText = "Disk Manager",
+                ToolBarText = "Disks"
+            };
+
+            var settingsCommand = new Command
+            {
+                MenuText = "Machine Settings",
+                ToolBarText = "Settings"
+            };
+
             // Menu
             Menu = new MenuBar
             {
@@ -87,7 +136,16 @@ namespace CardinalQemu
             // Toolbar		
             ToolBar = new ToolBar
             {
-                Items = { newCommand }
+                Items = {
+                    newCommand,
+                    importCommand,
+                    exportCommand,
+                    cloneCommand,
+                    deleteCommand,
+                    new SeparatorToolItem() { Type = SeparatorToolItemType.FlexibleSpace },
+                    startCommand,
+                    settingsCommand
+                }
             };
         }
         #endregion
@@ -99,8 +157,7 @@ namespace CardinalQemu
         // File Menu
         public void OnNew(object sender, EventArgs e)
         {
-            var panther = new Disk("/Users/ianmartinez/CardinalMachines/Disks/panther.qcow", "hda");
-            var badDisk = new Disk("/Users/ianmartinez/CardinalMachines/Disks/bad_disk.qcow", "hda");
+            MessageBox.Show(string.Join("\n", QemuData.ArchNames));
         }
 
         // Application Menu

@@ -1,29 +1,33 @@
 ﻿<Properties StartupConfiguration="{3C9EBF40-0B9E-4E2F-9732-2B8BA2257C8A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CardinalLib/Qemu/Apps.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CardinalLib/Qemu/QemuData.cs">
     <Files>
-      <File FileName="CardinalLib/System/ShellResult.cs" Line="30" Column="6" IsPinned="True" />
-      <File FileName="CardinalQemu/MainForm.cs" Line="106" Column="17" />
+      <File FileName="CardinalLib/System/ShellResult.cs" Line="31" Column="56" IsPinned="True" />
+      <File FileName="CardinalQemu/MainForm.cs" Line="106" Column="12" />
       <File FileName="CardinalQemu.Gtk/Program.cs" Line="1" Column="1" />
       <File FileName="CardinalQemu.XamMac/Info.plist" />
       <File FileName="CardinalQemu.XamMac/Program.cs" Line="10" Column="1" />
       <File FileName="CardinalQemu/AppInfo.cs" Line="1" Column="1" />
       <File FileName="CardinalQemu.Wpf/Program.cs" />
-      <File FileName="CardinalLib/Hardware/Disk.cs" Line="15" Column="13" />
+      <File FileName="CardinalLib/Hardware/Disk.cs" Line="42" Column="1" />
       <File FileName="CardinalLib/Core/DiskInfo.cs" Line="12" Column="53" />
       <File FileName="CardinalLib/Core/ByteValue.cs" Line="151" Column="28" />
-      <File FileName="CardinalLib/System/Host.cs" Line="32" Column="41" />
-      <File FileName="CardinalLib/System/Shell.cs" Line="72" Column="1" />
+      <File FileName="CardinalLib/System/Host.cs" Line="6" Column="35" />
+      <File FileName="CardinalLib/System/Shell.cs" Line="17" Column="48" />
       <File FileName="CardinalLib/System/ShellCommand.cs" Line="43" Column="37" />
-      <File FileName="CardinalLib/Host/App.cs" Line="16" Column="1" />
-      <File FileName="CardinalLib/Qemu/Apps.cs" Line="6" Column="9" />
+      <File FileName="CardinalLib/Host/App.cs" Line="16" Column="23" />
+      <File FileName="CardinalLib/Qemu/Apps.cs" Line="69" Column="24" />
+      <File FileName="CardinalLib/Qemu/QemuData.cs" Line="2" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CardinalQemu" expanded="True">
             <Node name="CardinalLib" expanded="True">
+              <Node name="Core" expanded="True" />
+              <Node name="Hardware" expanded="True" />
+              <Node name="Host" expanded="True" />
               <Node name="Qemu" expanded="True">
-                <Node name="Apps.cs" selected="True" />
+                <Node name="QemuData.cs" selected="True" />
               </Node>
             </Node>
             <Node name="CardinalQemu" expanded="True">
@@ -45,7 +49,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/MainForm.cs" relfile="CardinalQemu/MainForm.cs" line="108" column="1" />
+      <Breakpoint file="/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalLib/Hardware/Disk.cs" relfile="CardinalLib/Hardware/Disk.cs" line="42" column="1" />
+      <Breakpoint file="/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/MainForm.cs" relfile="CardinalQemu/MainForm.cs" line="104" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

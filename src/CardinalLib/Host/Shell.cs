@@ -14,22 +14,22 @@ namespace CardinalLib.Host
         /// <summary>
         /// The host shell executable name
         /// </summary>
-        public static string Name => SystemInfo.IsUnix ? "sh" : "cmd.exe";
+        public static string Name => HostSystem.IsUnix ? "sh" : "cmd.exe";
 
         /// <summary>
         /// The host shell's app to lookup other apps
         /// </summary>
-        public static string LookupApp => SystemInfo.IsUnix ? "which" : "where";
+        public static string LookupApp => HostSystem.IsUnix ? "which" : "where";
 
         /// <summary>
         /// The command argument after the shell name for the host shell
         /// </summary>
-        public static string CommandArg => SystemInfo.IsUnix ? "-c" : "/c";
+        public static string CommandArg => HostSystem.IsUnix ? "-c" : "/c";
 
         /// <summary>
         /// The line continuation character for the host shell
         /// </summary>
-        public static string LineContinuation => (SystemInfo.IsUnix) ? " \\\n" : " ^\r\n";
+        public static string LineContinuation => (HostSystem.IsUnix) ? " \\\n" : " ^\r\n";
 
         /// <summary>
         /// Make a string safe for the shell

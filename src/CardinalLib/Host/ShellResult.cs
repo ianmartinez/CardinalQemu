@@ -27,5 +27,9 @@ namespace CardinalLib.Host
         public bool HasOutput => (from output in Output
                                   where !string.IsNullOrEmpty(output)
                                   select output).Count() > 0;
+        /// <summary>
+        /// If there are no errors, but there is output
+        /// </summary>
+        public bool IsValid => !HasErrors && HasOutput;
     }
 }

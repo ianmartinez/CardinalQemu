@@ -20,7 +20,7 @@ namespace CardinalLib.Hardware
             Drive = drive;
 
             // Get the disk info app
-            var diskInfo = QemuApp.Get(imageInfoApp);
+            var diskInfo = QemuApps.Get(imageInfoApp);
 
             // Throw exception if the qemu-img app can't be found
             if (diskInfo == null)
