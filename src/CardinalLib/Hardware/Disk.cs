@@ -13,7 +13,7 @@ namespace CardinalLib.Hardware
         public string Name => File.Name;
         public string NameWithoutExt => Path.GetFileNameWithoutExtension(File.Name);
         public string Drive { get; set; }
-        public StorageInfo Info { get; set; }
+        public StorageInfo Info { get; }
 
         public Disk(string fileName, string drive)
         {
@@ -38,7 +38,14 @@ namespace CardinalLib.Hardware
                     string.Format("\"{0}\"", File.FullName)
                 });
 
-                // TODO - Parse output
+                if(results.IsValid)
+                {
+                    var infoDictionary = new QemuDictionaryResponse(results.Output);
+                    var diskSize = infoDictionary["disk size"];
+                    var virtualSize = infoDictionary["virtual size"];
+
+                    Info = new StorageInfo(ByteValue.Parse(diskSize), ByteValue.Parse(virtualSize));
+                }
             }
             else
             {

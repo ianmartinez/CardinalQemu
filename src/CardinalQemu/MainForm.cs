@@ -20,7 +20,7 @@ namespace CardinalQemu
         #endregion
 
         #region "UI"
-        string appTitle = "Cardinal Emulator " + AppInfo.GetFormattedVersion();
+        string appTitle = "Cardinal Emulator " + AppInfo.FormattedVersion;
         
         public MainForm()
         {
@@ -53,6 +53,12 @@ namespace CardinalQemu
             Content = MainPanel;
 
             // Commands - Application
+            var aboutCommand = new Command
+            {
+                MenuText = "About Cardinal QEMU"
+            };
+            aboutCommand.Executed += OnAbout;
+
             var quitCommand = new Command
             {
                 MenuText = "Quit",
@@ -110,6 +116,7 @@ namespace CardinalQemu
                 MenuText = "Disk Manager",
                 ToolBarText = "Disks"
             };
+            disksCommand.Executed += OnDisks;
 
             var settingsCommand = new Command
             {
@@ -128,11 +135,17 @@ namespace CardinalQemu
                             newCommand,
                             startCommand
                         }
+                    },
+                    new ButtonMenuItem {
+                        Text = "&Disks",
+                        Items = {
+                            disksCommand
+                        }
                     }
                 },
                 ApplicationItems =
                 {
-
+                    aboutCommand
                 },
                 QuitItem = quitCommand,
                 IncludeSystemItems = MenuBarSystemItems.None                
@@ -175,7 +188,27 @@ namespace CardinalQemu
             }
         }
 
+        // Disks Menu
+        public void OnDisks(object sender, EventArgs e)
+        {
+            Disk d = new Disk("/Users/ianmartinez/CardinalMachines/Disks/nt4_fat.qcow", "hda");
+        }
+
         // Application Menu
+        public void OnAbout(object sender, EventArgs e)
+        {
+            var aboutDialog = new AboutDialog
+            {
+                Title = string.Format("About Cardinal QEMU {0}", AppInfo.FormattedVersion),
+                Version = string.Format("Version {0}", AppInfo.FormattedVersion),
+                Copyright = string.Format("©2019-{0} Ian Martinez", AppInfo.CopyrightYear),
+                ProgramDescription = "A cross-platform GUI for QEMU",
+                
+            };
+
+            aboutDialog.ShowDialog(this);
+        }
+
         public void OnQuit(object sender, EventArgs e)
         {
             Application.Instance.Quit();
