@@ -22,12 +22,17 @@ namespace CardinalLib.Qemu
         /// <returns>The value, if it exists, null if not</returns>
         public string this[string key] => (responses.ContainsKey(key)) ? responses[key] : null;
 
-        public QemuDictionaryResponse(string[] lines)
+        /// <summary>
+        /// Initialize a QemuDictionaryResponse with the ShellResult.Output array of lines
+        /// </summary>
+        /// 
+        /// <param name="lines">An array of lines to parse</param>
+        public QemuDictionaryResponse(string[] lines, string delimeter = ":")
         {
             foreach(var line in lines)
             {
-                // Split key:value along :
-                var kvSplit = line.Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries);
+                // Split key:value along the delimeter
+                var kvSplit = line.Split(new[] { delimeter }, StringSplitOptions.RemoveEmptyEntries);
                 if(kvSplit.Length > 1) // Is a key value line
                 {
                     var key = kvSplit[0].Trim();

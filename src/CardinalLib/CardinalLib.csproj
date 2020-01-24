@@ -21,7 +21,7 @@
   <ItemGroup>
     <Folder Include="Core\" />
     <Folder Include="Hardware\" />
-    <Folder Include="Machine\" />
+    <Folder Include="Machines\" />
     <Folder Include="Host\" />
     <Folder Include="Qemu\" />
   </ItemGroup>

@@ -1,9 +1,6 @@
 using System;
 using Eto.Forms;
 using Eto.Drawing;
-using System.Diagnostics;
-using CardinalLib.Host;
-using System.Threading;
 using CardinalLib.Qemu;
 using CardinalLib.Hardware;
 
@@ -191,7 +188,7 @@ namespace CardinalQemu
         // Disks Menu
         public void OnDisks(object sender, EventArgs e)
         {
-            Disk d = new Disk("/Users/ianmartinez/CardinalMachines/Disks/nt4_fat.qcow", "hda");
+            var disks = Disk.GetAll();
         }
 
         // Application Menu

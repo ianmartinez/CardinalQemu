@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using CardinalLib.Core;
 using CardinalLib.Qemu;
 
@@ -15,8 +16,8 @@ namespace CardinalLib.Hardware
         public string Drive { get; set; }
         public StorageInfo Info { get; }
 
-        public Disk(string fileName, string drive)
-        {
+        public Disk(string fileName, string drive = "")
+        { 
             Drive = drive;
 
             // Get the disk info app
@@ -52,6 +53,34 @@ namespace CardinalLib.Hardware
                 // Set the size and capacity to 0 if the disk isn't found
                 Info = new StorageInfo(new ByteValue(0, ByteFormat.B), new ByteValue(0, ByteFormat.B));
             }
+        }
+
+        /// <summary>
+        /// Get an array of disks in the ~/CardinalMachines/Disks directory
+        /// </summary>
+        /// 
+        /// <returns>An array of disks in the disks directory</returns>
+        public static Disk[] GetAll()
+        {
+            List<Disk> disks = new List<Disk>();
+
+            // Create a new disk for each file
+            foreach (var file in Directory.EnumerateFiles(Directories.Disks))
+            {
+                var fileInfo = new FileInfo(file);
+
+                // Ignore hidden files like ".DS_STORE"
+                if(fileInfo.Attributes != FileAttributes.Hidden)
+                {
+                    var newDisk = new Disk(file);
+                    disks.Add(newDisk);
+                }
+            }
+
+            // Sort alphabetically
+            disks.Sort((diskA, diskB) => diskA.Name.CompareTo(diskB.Name));
+
+            return disks.ToArray();
         }
     }
 }
