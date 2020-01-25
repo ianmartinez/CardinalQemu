@@ -5,11 +5,11 @@ namespace CardinalLib.Host
 {
     public class App
     {
-        private static string[] UnixBinFolders = new string[] {
+        private static readonly string[] UnixBinFolders = new string[] {
             "/usr/bin/", "/usr/local/bin"
         };
 
-        private static string[] WinBinFolders = new string[] {
+        private static readonly string[] WinBinFolders = new string[] {
             @"C:\Program Files\qemu\"
         };
 
@@ -17,7 +17,6 @@ namespace CardinalLib.Host
         public FileInfo Executable { get; set; }
         public bool Exists => Executable != null && Executable.Exists;
         
-
         public App(string appName)
         {
             Name = appName;

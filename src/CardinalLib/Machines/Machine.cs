@@ -1,5 +1,4 @@
-﻿using System;
-namespace CardinalLib.Machines
+﻿namespace CardinalLib.Machines
 {
     public class Machine
     {
