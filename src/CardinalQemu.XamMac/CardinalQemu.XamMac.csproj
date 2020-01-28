@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="BlurViewHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CardinalQemu\CardinalQemu.csproj">

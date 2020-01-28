@@ -3,6 +3,7 @@ using Eto.Forms;
 using Eto.Drawing;
 using CardinalLib.Qemu;
 using CardinalLib.Hardware;
+using CardinalLib.Machines;
 
 namespace CardinalQemu
 {
@@ -172,7 +173,7 @@ namespace CardinalQemu
         // Machine Menu
         public void OnNew(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Join("\n", QemuData.ArchNames));
+            var machines = Machine.GetAll();
         }
 
         public async void OnStart(object sender, EventArgs e)
@@ -200,7 +201,6 @@ namespace CardinalQemu
                 Version = string.Format("Version {0}", AppInfo.FormattedVersion),
                 Copyright = string.Format("©2019-{0} Ian Martinez", AppInfo.CopyrightYear),
                 ProgramDescription = "A cross-platform GUI for QEMU",
-                
             };
 
             aboutDialog.ShowDialog(this);

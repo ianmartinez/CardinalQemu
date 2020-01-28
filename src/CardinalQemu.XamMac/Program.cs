@@ -7,7 +7,13 @@ namespace CardinalQemu.XamMac
 	{
 		static void Main(string[] args)
 		{
-			new Application(Eto.Platforms.XamMac2).Run(new MainForm());
+			var platform = new Eto.Mac.Platform(); // mac platform
+
+            // to register your custom control handler, call this before using your class:
+            platform.Add<BlurView.IBlurView>(() => new BlurViewHandler());
+
+
+			new Application(platform).Run(new MainForm());
 		}
 	}
 }
