@@ -206,6 +206,14 @@ namespace CardinalQemu
                 MachineSelector.SelectedRow = 0;
         }
 
+        private void UpdateTitle()
+        {
+            if (CurrentMachine != null)
+                Title = string.Format("{0} - {1}", appTitle, CurrentMachine.Name);
+            else
+                Title = appTitle;
+        }
+
         /**
          * Event handlers
          */
@@ -253,7 +261,7 @@ namespace CardinalQemu
 
         public void OnChangeSelection(object sender, EventArgs e)
         {
-
+            UpdateTitle();
         }
     }
 }
