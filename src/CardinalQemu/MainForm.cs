@@ -217,11 +217,12 @@ namespace CardinalQemu
 
         public async void OnStart(object sender, EventArgs e)
         {
-            var state = await CurrentMachine?.Boot();
+            var bootResult = await CurrentMachine?.Boot();
 
-            if(state.HasErrors)
+            // If there was an errors launching the machine
+            if(bootResult.HasErrors)
             {
-
+                MessageBox.Show(string.Join(Environment.NewLine, bootResult.Errors), MessageBoxType.Error);
             }
         }
 
