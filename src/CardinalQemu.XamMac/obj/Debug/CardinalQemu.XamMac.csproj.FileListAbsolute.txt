@@ -30,3 +30,4 @@
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/CardinalQemu.XamMac.pdb
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/bin/Debug/CardinalLib.dll
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/bin/Debug/CardinalLib.pdb
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/bin/Debug/Resources/Icons/object.png

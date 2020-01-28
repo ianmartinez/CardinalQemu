@@ -25,5 +25,6 @@
     <Folder Include="Host\" />
     <Folder Include="Qemu\" />
     <Folder Include="Guest\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>

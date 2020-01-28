@@ -47,21 +47,22 @@ namespace CardinalQemu
                 AutoSize = true,
                 Resizable = false
             });
-            MachineSelector.ShowHeader = false;
             MachineSelector.Columns[0].AutoSize = true;
+            MachineSelector.ShowHeader = false;
+            MachineSelector.BackgroundColor = Color.FromArgb(222, 0, 0, 100);
             MachineSelector.Border = BorderType.None;
             MachineSelector.SelectionChanged += OnChangeSelection;
 
             // Main Splitter
             MainSplitter.Panel1 = MachineSelector;
-            MachineSelector.BackgroundColor = Color.FromArgb(0, 0, 0, 0);
-
+            MainSplitter.Panel1.BackgroundColor = Color.FromArgb(0, 0, 0, 0);
             MainSplitter.Panel2 = MachineInfoPanel;
             MainSplitter.Orientation = Orientation.Horizontal;
             MainSplitter.Position = 1 * (ClientSize.Width / 3);
             MainSplitter.FixedPanel = SplitterFixedPanel.Panel1;
 
             MainPanel.Content = MainSplitter;
+
             Content = MainPanel;
 
             // Commands - Application
@@ -185,25 +186,26 @@ namespace CardinalQemu
         private void LoadMachines()
         {
             Machines = Machine.GetAll();
-
             MachineSelectorItems.Clear();
-            var machineIcon = new Icon(1, new Bitmap(25, 25, PixelFormat.Format32bppRgb));
+            var machineIcon =  Icons.Get("object");
 
             foreach (Machine machine in Machines)
             {
-                var notebookPagesTreeItem = new TreeGridItem()
+                var machineTreeGridItem = new TreeGridItem()
                 {
                     Expanded = false,
                     Values = new object[] { machineIcon, machine.Name },
                 };
 
-                MachineSelectorItems.Add(notebookPagesTreeItem);
+                MachineSelectorItems.Add(machineTreeGridItem);
             }
 
             MachineSelector.DataStore = MachineSelectorItems;
 
             if (MachineSelectorItems.Count > 0 && Loaded)
                 MachineSelector.SelectedRow = 0;
+
+            UpdateTitle();
         }
 
         private void UpdateTitle()
