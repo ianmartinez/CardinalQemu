@@ -7,12 +7,12 @@ namespace CardinalLib.Host
         /// <summary>
         /// The stderror output of a shell command
         /// </summary>
-        public string[] Errors { get; internal set; }
+        public string[] Errors { get; set; }
 
         /// <summary>
         /// The stdout output of a shell command;
         /// </summary>
-        public string[] Output { get; internal set; }
+        public string[] Output { get; set; }
 
         /// <summary>
         /// If the stdError output is anything but empty
@@ -31,5 +31,15 @@ namespace CardinalLib.Host
         /// If there are no errors, but there is output
         /// </summary>
         public bool IsValid => !HasErrors && HasOutput;
+
+        /// <summary>
+        /// The executable that the command was sent to
+        /// </summary>
+        public string TargetExecutable { get; set; }
+
+        /// <summary>
+        /// The arguments that were sent to the command
+        /// </summary>
+        public string SentArguments { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace CardinalLib.Hardware
         public FileInfo File { get; }
         public bool Exists => File.Exists;
         public string Name => File.Name;
+        public string AbsolutePath => File.FullName;
         public string NameWithoutExt => Path.GetFileNameWithoutExtension(File.Name);
         public string Drive { get; set; }
         public StorageInfo Info { get; }

@@ -9,6 +9,20 @@ namespace CardinalQemu
 {
     public class MainForm : Form
     {
+        Machine[] Machines;
+        Machine CurrentMachine
+        {
+            get
+            {
+                var machineIndex = MachineSelector.SelectedRow;
+
+                if (Machines != null && machineIndex != -1 && machineIndex < Machines.Length)
+                    return Machines[machineIndex];
+
+                return null;
+            }
+        }
+
         #region "Controls"
         TreeGridItemCollection MachineSelectorItems = new TreeGridItemCollection();
         TreeGridView MachineSelector = new TreeGridView();
@@ -163,8 +177,34 @@ namespace CardinalQemu
                     settingsCommand
                 }
             };
+
+            LoadMachines();
         }
         #endregion
+
+        private void LoadMachines()
+        {
+            Machines = Machine.GetAll();
+
+            MachineSelectorItems.Clear();
+            var machineIcon = new Icon(1, new Bitmap(25, 25, PixelFormat.Format32bppRgb));
+
+            foreach (Machine machine in Machines)
+            {
+                var notebookPagesTreeItem = new TreeGridItem()
+                {
+                    Expanded = false,
+                    Values = new object[] { machineIcon, machine.Name },
+                };
+
+                MachineSelectorItems.Add(notebookPagesTreeItem);
+            }
+
+            MachineSelector.DataStore = MachineSelectorItems;
+
+            if (MachineSelectorItems.Count > 0 && Loaded)
+                MachineSelector.SelectedRow = 0;
+        }
 
         /**
          * Event handlers
@@ -173,12 +213,11 @@ namespace CardinalQemu
         // Machine Menu
         public void OnNew(object sender, EventArgs e)
         {
-            var machines = Machine.GetAll();
         }
 
         public async void OnStart(object sender, EventArgs e)
         {
-            var state = await QemuApps.Get("qemu-system-ppc").RunAsync();
+            var state = await CurrentMachine?.Boot();
 
             if(state.HasErrors)
             {

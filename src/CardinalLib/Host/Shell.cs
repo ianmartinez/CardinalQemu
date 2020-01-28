@@ -64,7 +64,7 @@ namespace CardinalLib.Host
             var argumentsString = string.Format("{0} \"{1}{2} {3}\"",
                                                 CommandArg,
                                                 cdCommand,
-                                                command.Executable,
+                                                ShellSanitize(command.Executable),
                                                 string.Join(" ", command.Arguments));
 
             // Form process info
@@ -97,6 +97,8 @@ namespace CardinalLib.Host
             // Return the output
             return new ShellResult
             {
+                TargetExecutable = Name,
+                SentArguments = argumentsString,
                 Errors = stdError.Split(new[] { Environment.NewLine }, splitOptions),
                 Output = stdOut.Split(new[] { Environment.NewLine }, splitOptions)
             };

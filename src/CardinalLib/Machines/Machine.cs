@@ -11,6 +11,8 @@ namespace CardinalLib.Machines
 {
     public class Machine
     {
+        public const bool FORCE_SDL_ON_WINDOWS = true;
+
         #region "Properties"
         public string MachineDirectory { get; private set; }
         public App SystemApp { get; private set; }
@@ -34,7 +36,7 @@ namespace CardinalLib.Machines
             }
         }
         public string Cpu { get; set; }
-        public string MachineName { get; set; }
+        public string EmulatedMachine { get; set; }
 
         // Hardware
         public long Ram { get; set; }
@@ -46,7 +48,7 @@ namespace CardinalLib.Machines
         public string BootTarget { get; set; }
 
         // QEMU
-        public List<BootArgument> bootArguments { get; set; } = new List<BootArgument>();
+        public List<ShellArgument> QemuArgs { get; set; } = new List<ShellArgument>();
         #endregion
 
         public Machine() { }
@@ -75,7 +77,7 @@ namespace CardinalLib.Machines
             // System
             Arch = nav.SelectSingleNode("/machine/setup/arch").Value;
             Cpu = nav.SelectSingleNode("/machine/setup/cpu")?.Value;
-            MachineName = nav.SelectSingleNode("/machine/setup/machine")?.Value;
+            EmulatedMachine = nav.SelectSingleNode("/machine/setup/machine")?.Value;
             BootTarget = nav.SelectSingleNode("/machine/setup/boot")?.Value;
 
             // Hardware
@@ -102,14 +104,78 @@ namespace CardinalLib.Machines
             {
                 var argumentName = bootArgument.GetAttribute("name", "");
                 var argumentValue = ReplaceVariables(bootArgument.Value);
-                bootArguments.Add(new BootArgument(argumentName, argumentValue));
+                QemuArgs.Add(new ShellArgument(argumentName, argumentValue));
             }
         }
 
         public async Task<ShellResult> Boot()
         {
-            
-            return await SystemApp.RunAsync();
+            List<ShellArgument> bootArgs = new List<ShellArgument>();
+
+            // RAM
+            bootArgs.Add(new ShellArgument("m", Ram.ToString()));
+
+
+            // CPU
+            if (!string.IsNullOrEmpty(Cpu))
+            {
+                bootArgs.Add(new ShellArgument("cpu", Cpu)
+                {
+                    HasQuotes = true
+                });
+            }
+
+            // Emulated Machine
+            if(!string.IsNullOrEmpty(EmulatedMachine))
+            {
+                bootArgs.Add(new ShellArgument("M", EmulatedMachine)
+                {
+                    HasQuotes = true
+                });
+            }
+
+            // Disks
+            foreach (var disk in Disks)
+            {
+                bootArgs.Add(new ShellArgument(disk.Drive, disk.AbsolutePath)
+                {
+                    HasQuotes = true
+                });
+            }
+
+            // CDs
+            foreach(var cd in CdDrives)
+            {
+                bootArgs.Add(new ShellArgument("cdrom", cd)
+                {
+                    HasQuotes = true
+                });
+            }
+
+            // Boot target
+            bootArgs.Add(new ShellArgument("boot", BootTarget));
+
+            // Kernel
+            if (!string.IsNullOrEmpty(Kernel))
+            {
+                bootArgs.Add(new ShellArgument("kernel", Kernel)
+                {
+                    HasQuotes = true
+                });
+            }
+
+            /* Force SDL on Windows, the default GTK display 
+               is too buggy and cursors jump out of guest randomly */
+            if(HostSystem.IsWindows && FORCE_SDL_ON_WINDOWS)
+            {
+                bootArgs.Add(new ShellArgument("display", "sdl"));
+            }
+
+            // Additional QEMU arguments
+            bootArgs.AddRange(QemuArgs);
+
+            // Run boot the machine
+            return await SystemApp.RunAsync(ShellArgument.ToArray(bootArgs.ToArray()));
         }
 
         #region "Variables"
