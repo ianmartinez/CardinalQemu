@@ -1,2 +1,2 @@
 # cardinal-qemu
-A UI front-end for QEMU
+An easy to use UI front-end for QEMU written in C# and running on macOS, Windows, and Linux.
