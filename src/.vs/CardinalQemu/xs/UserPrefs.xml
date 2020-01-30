@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{3C9EBF40-0B9E-4E2F-9732-2B8BA2257C8A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CardinalQemu/MainForm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CardinalQemu.XamMac/Program.cs">
     <Files>
       <File FileName="CardinalLib/Host/ShellResult.cs" Line="41" Column="56" IsPinned="True" />
       <File FileName="CardinalLib/Machines/Machine.cs" />
-      <File FileName="CardinalQemu.XamMac/Program.cs" Line="27" Column="1" />
-      <File FileName="CardinalQemu/MainForm.cs" Line="55" Column="1" />
+      <File FileName="CardinalQemu.XamMac/Program.cs" Line="14" Column="66" />
+      <File FileName="CardinalQemu/MainForm.cs" Line="189" Column="39" />
       <File FileName="CardinalLib/Host/App.cs" />
       <File FileName="CardinalLib/Host/HostSystem.cs" />
       <File FileName="CardinalLib/Host/ShellCommand.cs" />
@@ -14,9 +14,11 @@
       <File FileName="CardinalLib/Qemu/QemuData.cs" />
       <File FileName="CardinalLib/Machines/Variable.cs" />
       <File FileName="CardinalLib/Host/Shell.cs" />
-      <File FileName="CardinalQemu/Resources.resx" Line="121" Column="1" />
-      <File FileName="CardinalQemu/Icons.cs" Line="15" Column="62" />
-      <File FileName="CardinalQemu/Resources/Icons/object.png" />
+      <File FileName="CardinalQemu/Resources.resx" />
+      <File FileName="CardinalQemu/Icons.cs" Line="20" Column="1" />
+      <File FileName="CardinalQemu/AppInfo.cs" />
+      <File FileName="CardinalQemu.Gtk/Program.cs" />
+      <File FileName="CardinalQemu.XamMac/Info.plist" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,10 +26,15 @@
           <Node name="CardinalQemu" expanded="True">
             <Node name="CardinalQemu" expanded="True">
               <Node name="Dependencies" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="Icons" expanded="True" />
+              </Node>
             </Node>
             <Node name="CardinalQemu.Gtk" expanded="True" />
             <Node name="CardinalQemu.Wpf" expanded="True" />
-            <Node name="CardinalQemu.XamMac" expanded="True" />
+            <Node name="CardinalQemu.XamMac" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

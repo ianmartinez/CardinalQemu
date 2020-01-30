@@ -83,58 +83,67 @@ namespace CardinalQemu
             var newCommand = new Command
             {
                 MenuText = "New Machine",
-                ToolBarText = "New"
+                ToolBarText = "New",
+                Image = Icons.Get("document-new") 
             };
             newCommand.Executed += OnNew;
 
             var importCommand = new Command
             {
                 MenuText = "Import Machine",
-                ToolBarText = "Import"
+                ToolBarText = "Import",
+                Image = Icons.Get("document-open")
             };
 
             var exportCommand = new Command
             {
                 MenuText = "Export Machine",
-                ToolBarText = "Export"
+                ToolBarText = "Export",
+                Image = Icons.Get("filetype-package")
             };
 
             var cloneCommand = new Command
             {
                 MenuText = "Clone Machine",
-                ToolBarText = "Clone"
+                ToolBarText = "Clone",
+                Image = Icons.Get("edit-copy")
             };
 
             var deleteCommand = new Command
             {
                 MenuText = "Delete Machine",
-                ToolBarText = "Delete"
+                ToolBarText = "Delete",
+                Image = Icons.Get("list-remove")
             };
 
             var startCommand = new Command
             {
                 MenuText = "Start Machine",
-                ToolBarText = "Start"
+                ToolBarText = "Start",
+                Image = Icons.Get("media-playback-start")
             };
             startCommand.Executed += OnStart;
 
             var refreshCommand = new Command
             {
                 MenuText = "Refresh Machine",
-                ToolBarText = "Refresh"
+                ToolBarText = "Refresh",
+                Image = Icons.Get("refresh")
             };
 
             var disksCommand = new Command
             {
                 MenuText = "Disk Manager",
-                ToolBarText = "Disks"
+                ToolBarText = "Disks",
+                Image = Icons.Get("drive-harddisk")
             };
             disksCommand.Executed += OnDisks;
 
             var settingsCommand = new Command
             {
                 MenuText = "Machine Settings",
-                ToolBarText = "Settings"
+                ToolBarText = "Settings",
+                Image = Icons.Get("config")
             };
 
             // Menu
@@ -176,7 +185,8 @@ namespace CardinalQemu
                     new SeparatorToolItem() { Type = SeparatorToolItemType.FlexibleSpace },
                     startCommand,
                     settingsCommand
-                }
+                },
+                Style = "nativeToolbar"
             };
 
             LoadMachines();
@@ -187,7 +197,7 @@ namespace CardinalQemu
         {
             Machines = Machine.GetAll();
             MachineSelectorItems.Clear();
-            var machineIcon =  Icons.Get("object");
+            var machineIcon =  Icons.Get("screen-on");
 
             foreach (Machine machine in Machines)
             {
@@ -232,7 +242,7 @@ namespace CardinalQemu
             // If there was an errors launching the machine
             if(bootResult.HasErrors)
             {
-                MessageBox.Show(string.Join(Environment.NewLine, bootResult.Errors), MessageBoxType.Error);
+                MessageBox.Show(this, string.Join(Environment.NewLine, bootResult.Errors), MessageBoxType.Error);
             }
         }
 
@@ -250,7 +260,7 @@ namespace CardinalQemu
                 Title = string.Format("About Cardinal QEMU {0}", AppInfo.FormattedVersion),
                 Version = string.Format("Version {0}", AppInfo.FormattedVersion),
                 Copyright = string.Format("©2019-{0} Ian Martinez", AppInfo.CopyrightYear),
-                ProgramDescription = "A cross-platform GUI for QEMU",
+                ProgramDescription = "A cross-platform GUI for QEMU"
             };
 
             aboutDialog.ShowDialog(this);

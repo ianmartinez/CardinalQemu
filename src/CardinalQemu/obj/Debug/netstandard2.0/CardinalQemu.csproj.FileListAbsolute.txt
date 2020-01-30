@@ -4,11 +4,10 @@
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/bin/Debug/netstandard2.0/CardinalLib.dll
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/bin/Debug/netstandard2.0/CardinalLib.pdb
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.csprojAssemblyReference.cache
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.Resources.resources
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.csproj.GenerateResource.cache
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.AssemblyInfoInputs.cache
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.AssemblyInfo.cs
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.csproj.CopyComplete
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.dll
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.pdb
-/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/bin/Debug/netstandard2.0/Resources/Icons/object.png
-/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.Resources.resources
-/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.csproj.GenerateResource.cache
