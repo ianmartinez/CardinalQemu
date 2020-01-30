@@ -84,7 +84,7 @@ namespace CardinalQemu
             {
                 MenuText = "New Machine",
                 ToolBarText = "New",
-                Image = Icons.Get("document-new") 
+                Image = Icons.Get("list-add") 
             };
             newCommand.Executed += OnNew;
 
@@ -94,13 +94,15 @@ namespace CardinalQemu
                 ToolBarText = "Import",
                 Image = Icons.Get("document-open")
             };
+            importCommand.Executed += OnImport;
 
             var exportCommand = new Command
             {
                 MenuText = "Export Machine",
                 ToolBarText = "Export",
-                Image = Icons.Get("filetype-package")
+                Image = Icons.Get("document-save")
             };
+            exportCommand.Executed += OnExport;
 
             var cloneCommand = new Command
             {
@@ -178,10 +180,10 @@ namespace CardinalQemu
             {
                 Items = {
                     newCommand,
+                    deleteCommand,
                     importCommand,
                     exportCommand,
                     cloneCommand,
-                    deleteCommand,
                     new SeparatorToolItem() { Type = SeparatorToolItemType.FlexibleSpace },
                     startCommand,
                     settingsCommand
@@ -233,6 +235,39 @@ namespace CardinalQemu
         // Machine Menu
         public void OnNew(object sender, EventArgs e)
         {
+        }
+
+        FileFilter[] filters = {
+            new FileFilter("Machine Archive (*.cmarc)", ".cmarc")
+        };
+
+        public void OnImport(object sender, EventArgs e)
+        {
+            var openDialog = new OpenFileDialog();
+
+            foreach (var filter in filters)
+                openDialog.Filters.Add(filter);
+
+            openDialog.CurrentFilterIndex = 0;
+
+            if (openDialog.ShowDialog(this) == DialogResult.Ok)
+            {
+                
+            }
+        }
+
+        public void OnExport(object sender, EventArgs e)
+        {
+            var saveDialog = new SaveFileDialog();
+
+            foreach (var filter in filters)
+                saveDialog.Filters.Add(filter);
+
+            saveDialog.CurrentFilterIndex = 0;
+
+            if (saveDialog.ShowDialog(this) == DialogResult.Ok)
+            {
+            }
         }
 
         public async void OnStart(object sender, EventArgs e)

@@ -40,6 +40,7 @@
     <None Remove="Resources\Icons\refresh.png" />
     <None Remove="Resources\Icons\media-playback-start.png" />
     <None Remove="Resources\Icons\screen-on.png" />
+    <None Remove="Resources\Icons\list-add.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Icons\album.png" />
@@ -54,5 +55,6 @@
     <EmbeddedResource Include="Resources\Icons\refresh.png" />
     <EmbeddedResource Include="Resources\Icons\media-playback-start.png" />
     <EmbeddedResource Include="Resources\Icons\screen-on.png" />
+    <EmbeddedResource Include="Resources\Icons\list-add.png" />
   </ItemGroup>
 </Project>
