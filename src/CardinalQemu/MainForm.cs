@@ -28,7 +28,46 @@ namespace CardinalQemu
         TreeGridView MachineSelector = new TreeGridView();
         Panel MainPanel = new Panel();
         Splitter MainSplitter = new Splitter();
-        Panel MachineInfoPanel = new Panel();
+        Scrollable MachineInfoPanel = new Scrollable
+        {
+            Visible = false,
+            Border = BorderType.None
+        };
+
+        // Machine info statck
+        StackLayout TitlePanel = new StackLayout
+        {
+            Orientation = Orientation.Horizontal,
+            Padding = new Padding(5),
+            VerticalContentAlignment = VerticalAlignment.Center
+        };
+
+        StackLayout TitleInnerPanel = new StackLayout
+        {
+            Orientation = Orientation.Vertical,
+            Padding = new Padding(5)
+        };
+
+        ImageView MachineIcon = new ImageView
+        {
+            Image = Icons.Get("vm")
+        };
+
+        Label MachineTitle = new Label
+        {
+            Font = new Font(SystemFont.Bold, 24)
+        };
+
+        Label MachineArch = new Label
+        {
+            Font = new Font(SystemFont.Default)
+        };
+
+        StackLayout InfoStack = new StackLayout
+        {
+            Orientation = Orientation.Vertical,
+            Padding = new Padding(10, 15)
+        };
         #endregion
 
         #region "UI"
@@ -51,6 +90,15 @@ namespace CardinalQemu
             MachineSelector.Border = BorderType.None;
             MachineSelector.SelectionChanged += OnChangeSelection;
 
+            // Machine Info
+           // InfoStack.Items.Add(new Panel { Height = 20 });
+            TitlePanel.Items.Add(MachineIcon);
+            TitlePanel.Items.Add(TitleInnerPanel);
+            TitleInnerPanel.Items.Add(MachineTitle);
+            TitleInnerPanel.Items.Add(MachineArch);
+            InfoStack.Items.Add(TitlePanel);
+            MachineInfoPanel.Content = InfoStack;
+
             // Main Splitter
             MainSplitter.Panel1 = MachineSelector;
             MainSplitter.Panel1.BackgroundColor = Color.FromArgb(0, 0, 0, 0);
@@ -61,7 +109,6 @@ namespace CardinalQemu
 
             MainPanel.Content = MainSplitter;
             Content = MainPanel;
-
             // Commands - Application
             var aboutCommand = new Command
             {
@@ -192,6 +239,8 @@ namespace CardinalQemu
         }
         #endregion
 
+        public bool MachinesLoaded { get; set; } = false;
+
         private void LoadMachines()
         {
             Machines = Machine.GetAll();
@@ -211,9 +260,10 @@ namespace CardinalQemu
 
             MachineSelector.DataStore = MachineSelectorItems;
 
-            if (MachineSelectorItems.Count > 0 && Loaded)
+            if (MachineSelectorItems.Count > 0)
                 MachineSelector.SelectedRow = 0;
 
+            MachinesLoaded = true;
             UpdateTitle();
         }
 
@@ -223,6 +273,17 @@ namespace CardinalQemu
                 Title = string.Format("{0} - {1}", appTitle, CurrentMachine.Name);
             else
                 Title = appTitle;
+        }
+
+        private void UpdateSelectedMachine()
+        {
+            MachineInfoPanel.Visible = CurrentMachine != null;
+
+            if(CurrentMachine != null)
+            {
+                MachineTitle.Text = CurrentMachine.Name;
+                MachineArch.Text = CurrentMachine.Arch;
+            }
         }
 
         /**
@@ -306,6 +367,7 @@ namespace CardinalQemu
         public void OnChangeSelection(object sender, EventArgs e)
         {
             UpdateTitle();
+            UpdateSelectedMachine();
         }
     }
 }
