@@ -32,7 +32,7 @@ namespace CardinalQemu
         #endregion
 
         #region "UI"
-        string appTitle = "Cardinal Emulator " + AppInfo.FormattedVersion;
+        string appTitle = "Cardinal QEMU " + AppInfo.FormattedVersion;
         
         public MainForm()
         {
@@ -47,9 +47,7 @@ namespace CardinalQemu
                 AutoSize = true,
                 Resizable = false
             });
-            MachineSelector.Columns[0].AutoSize = true;
             MachineSelector.ShowHeader = false;
-            MachineSelector.BackgroundColor = Color.FromArgb(222, 0, 0, 100);
             MachineSelector.Border = BorderType.None;
             MachineSelector.SelectionChanged += OnChangeSelection;
 
@@ -62,7 +60,6 @@ namespace CardinalQemu
             MainSplitter.FixedPanel = SplitterFixedPanel.Panel1;
 
             MainPanel.Content = MainSplitter;
-
             Content = MainPanel;
 
             // Commands - Application
@@ -188,7 +185,7 @@ namespace CardinalQemu
                     startCommand,
                     settingsCommand
                 },
-                Style = "nativeToolbar"
+                Style = "NativeToolbar"
             };
 
             LoadMachines();
@@ -199,7 +196,7 @@ namespace CardinalQemu
         {
             Machines = Machine.GetAll();
             MachineSelectorItems.Clear();
-            var machineIcon =  Icons.Get("screen-on");
+            var machineIcon =  Icons.Get("vm");
 
             foreach (Machine machine in Machines)
             {
@@ -238,7 +235,7 @@ namespace CardinalQemu
         }
 
         FileFilter[] filters = {
-            new FileFilter("Machine Archive (*.cmarc)", ".cmarc")
+            new FileFilter("Cardinal Machine Archive (*.cmarc)", ".cmarc")
         };
 
         public void OnImport(object sender, EventArgs e)

@@ -26,35 +26,47 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Resources\Icons\album.png" />
     <None Remove="Resources\Icons\config.png" />
-    <None Remove="Resources\Icons\document-new.png" />
+    <None Remove="Resources\Icons\cpu.png" />
+    <None Remove="Resources\Icons\desktop.png" />
+    <None Remove="Resources\Icons\document-export.png" />
+    <None Remove="Resources\Icons\document-import.png" />
     <None Remove="Resources\Icons\document-open.png" />
     <None Remove="Resources\Icons\document-save.png" />
     <None Remove="Resources\Icons\document-save-as.png" />
     <None Remove="Resources\Icons\drive-harddisk.png" />
     <None Remove="Resources\Icons\edit-copy.png" />
-    <None Remove="Resources\Icons\filetype-package.png" />
     <None Remove="Resources\Icons\list-add.png" />
     <None Remove="Resources\Icons\list-remove.png" />
-    <None Remove="Resources\Icons\refresh.png" />
     <None Remove="Resources\Icons\media-playback-start.png" />
-    <None Remove="Resources\Icons\screen-on.png" />
-    <None Remove="Resources\Icons\list-add.png" />
+    <None Remove="Resources\Icons\media-playback-stop.png" />
+    <None Remove="Resources\Icons\refresh.png" />
+    <None Remove="Resources\Icons\trash.png" />
+    <None Remove="Resources\Icons\vm.png" />
+    <None Remove="Resources\Icons\vm-add.png" />
+    <None Remove="Resources\Icons\vm-export.png" />
+    <None Remove="Resources\Icons\vm-import.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Icons\album.png" />
     <EmbeddedResource Include="Resources\Icons\config.png" />
-    <EmbeddedResource Include="Resources\Icons\document-new.png" />
+    <EmbeddedResource Include="Resources\Icons\cpu.png" />
+    <EmbeddedResource Include="Resources\Icons\desktop.png" />
+    <EmbeddedResource Include="Resources\Icons\document-export.png" />
+    <EmbeddedResource Include="Resources\Icons\document-import.png" />
     <EmbeddedResource Include="Resources\Icons\document-open.png" />
     <EmbeddedResource Include="Resources\Icons\document-save.png" />
+    <EmbeddedResource Include="Resources\Icons\document-save-as.png" />
     <EmbeddedResource Include="Resources\Icons\drive-harddisk.png" />
     <EmbeddedResource Include="Resources\Icons\edit-copy.png" />
-    <EmbeddedResource Include="Resources\Icons\filetype-package.png" />
-    <EmbeddedResource Include="Resources\Icons\list-remove.png" />
-    <EmbeddedResource Include="Resources\Icons\refresh.png" />
-    <EmbeddedResource Include="Resources\Icons\media-playback-start.png" />
-    <EmbeddedResource Include="Resources\Icons\screen-on.png" />
     <EmbeddedResource Include="Resources\Icons\list-add.png" />
+    <EmbeddedResource Include="Resources\Icons\list-remove.png" />
+    <EmbeddedResource Include="Resources\Icons\media-playback-start.png" />
+    <EmbeddedResource Include="Resources\Icons\media-playback-stop.png" />
+    <EmbeddedResource Include="Resources\Icons\refresh.png" />
+    <EmbeddedResource Include="Resources\Icons\trash.png" />
+    <EmbeddedResource Include="Resources\Icons\vm.png" />
+    <EmbeddedResource Include="Resources\Icons\vm-add.png" />
+    <EmbeddedResource Include="Resources\Icons\vm-export.png" />
+    <EmbeddedResource Include="Resources\Icons\vm-import.png" />
   </ItemGroup>
 </Project>
