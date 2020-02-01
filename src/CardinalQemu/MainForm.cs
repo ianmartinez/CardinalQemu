@@ -4,6 +4,7 @@ using Eto.Drawing;
 using CardinalLib.Qemu;
 using CardinalLib.Hardware;
 using CardinalLib.Machines;
+using CardinalLib.Core;
 
 namespace CardinalQemu
 {
@@ -34,8 +35,8 @@ namespace CardinalQemu
             Border = BorderType.None
         };
 
-        // Machine info statck
-        StackLayout TitlePanel = new StackLayout
+        // Machine Title
+        StackLayout TitleCard = new StackLayout
         {
             Orientation = Orientation.Horizontal,
             Padding = new Padding(5),
@@ -63,10 +64,32 @@ namespace CardinalQemu
             Font = new Font(SystemFont.Default)
         };
 
+        // Machine Disk Info
+        StackLayout DisksCard = new StackLayout
+        {
+            Orientation = Orientation.Vertical,
+            Padding = new Padding(5),
+            HorizontalContentAlignment = HorizontalAlignment.Stretch
+        };
+
+        Label DisksTitle = new Label
+        {
+            Text = "Disks:",
+            Font = new Font(SystemFont.Bold, 16)
+        };
+
+        StackLayout DisksInnerPanel = new StackLayout
+        {
+            Orientation = Orientation.Vertical,
+            Padding = new Padding(0, 5),
+            HorizontalContentAlignment = HorizontalAlignment.Stretch
+        };
+
         StackLayout InfoStack = new StackLayout
         {
             Orientation = Orientation.Vertical,
-            Padding = new Padding(10, 15)
+            Padding = new Padding(10, 15),
+            HorizontalContentAlignment = HorizontalAlignment.Stretch
         };
         #endregion
 
@@ -76,7 +99,7 @@ namespace CardinalQemu
         public MainForm()
         {
             Title = appTitle;
-            MinimumSize = new Size(500, 300);
+            MinimumSize = new Size(450, 300);
             ClientSize = new Size(700, 500);
 
             // Page Selector
@@ -91,12 +114,20 @@ namespace CardinalQemu
             MachineSelector.SelectionChanged += OnChangeSelection;
 
             // Machine Info
-           // InfoStack.Items.Add(new Panel { Height = 20 });
-            TitlePanel.Items.Add(MachineIcon);
-            TitlePanel.Items.Add(TitleInnerPanel);
+            int vPad = 20;
+            // Machine title header
+            TitleCard.Items.Add(MachineIcon);
+            TitleCard.Items.Add(TitleInnerPanel);
             TitleInnerPanel.Items.Add(MachineTitle);
             TitleInnerPanel.Items.Add(MachineArch);
-            InfoStack.Items.Add(TitlePanel);
+            InfoStack.Items.Add(TitleCard);
+
+            // Disks
+            InfoStack.Items.Add(new Panel { Height = vPad });
+            InfoStack.Items.Add(DisksCard);
+            DisksCard.Items.Add(DisksTitle);
+            DisksCard.Items.Add(DisksInnerPanel);
+                       
             MachineInfoPanel.Content = InfoStack;
 
             // Main Splitter
@@ -283,6 +314,46 @@ namespace CardinalQemu
             {
                 MachineTitle.Text = CurrentMachine.Name;
                 MachineArch.Text = CurrentMachine.Arch;
+
+                DisksInnerPanel.Items.Clear();
+                foreach(var disk in CurrentMachine.Disks)
+                {
+                    var diskTitlePanel = new StackLayout
+                    {
+                        Orientation = Orientation.Vertical,
+                        Padding = new Padding(0, 0),
+                        Spacing = 5,
+                        HorizontalContentAlignment = HorizontalAlignment.Stretch
+                    };
+
+                    diskTitlePanel.Items.Add(new Label
+                    {
+                        Text = string.Format("{0} ({1}):", disk.Drive, disk.Name),
+                        Font = new Font(SystemFont.Bold),
+                        VerticalAlignment = VerticalAlignment.Center
+                    });
+
+                    diskTitlePanel.Items.Add(new Label
+                    {
+                        Text = disk.Info.FormattedText
+                    });
+
+                    var diskPanel = new StackLayout
+                    {
+                        Orientation = Orientation.Vertical,
+                        HorizontalContentAlignment = HorizontalAlignment.Stretch
+                    };
+
+                    diskPanel.Items.Add(diskTitlePanel);
+                    var diskStatus = new ProgressBar
+                    {
+                        MinValue = 0,
+                        MaxValue = 100,
+                        Value = disk.Info.PercentageInt
+                    };
+                    diskPanel.Items.Add(diskStatus);
+                    DisksInnerPanel.Items.Add(diskPanel);
+                }
             }
         }
 

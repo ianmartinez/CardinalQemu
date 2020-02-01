@@ -41,6 +41,12 @@
         public double Percentage => Size.GetPercentageOf(Capacity);
 
         /// <summary>
+        /// The percentage of space used out of the total capacity, rounded
+        /// to the nearest int
+        /// </summary>
+        public int PercentageInt => Size.GetPercentInt(Capacity);
+
+        /// <summary>
         /// Get the common format (i.e. the largest of the two formats Size and
         /// Capacity)
         /// </summary>
@@ -62,5 +68,10 @@
         /// Format the percentage
         /// </summary>
         public string FormattedPercentage => string.Format("{0} %", Percentage);
+
+        /// <summary>
+        /// The formatted text for displaying on the machine info panel
+        /// </summary>
+        public string FormattedText => string.Format("{0} of {1} ({2})", FormattedSize, FormattedCapacity, FormattedPercentage);
     }
 }

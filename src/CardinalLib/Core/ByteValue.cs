@@ -179,6 +179,18 @@ namespace CardinalLib.Core
         }
 
         /// <summary>
+        /// Get the percentage rounded to the nearest int
+        /// </summary>
+        /// 
+        /// <param name="otherValue">The other value to compare to</param>
+        /// 
+        /// <returns>The percentage rounded to the nearest int</returns>
+        public int GetPercentInt(ByteValue otherValue)
+        {
+            return (int)Math.Round(GetPercentageOf(otherValue), MidpointRounding.AwayFromZero);
+        }
+
+        /// <summary>
         /// Get the larger format between the two ByteValues
         /// that will make it easier to compare them with
         /// </summary>
