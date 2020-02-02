@@ -43,6 +43,7 @@ namespace CardinalLib.Machines
         public ByteValue Ram { get; set; }
         public List<string> CdDrives { get; set; } = new List<string>();
         public List<Disk> Disks { get; set; } = new List<Disk>();
+        public DiskImage TempImage { get; set; }
 
         // Boot
         public string Kernel { get; set; }
@@ -116,7 +117,6 @@ namespace CardinalLib.Machines
             // RAM
             bootArgs.Add(new ShellArgument("m", ((int)Ram.Megabytes).ToString()));
 
-
             // CPU
             if (!string.IsNullOrEmpty(Cpu))
             {
@@ -145,7 +145,18 @@ namespace CardinalLib.Machines
             }
 
             // CDs
-            foreach(var cd in CdDrives)
+
+            // If temp image exists and is a cd, add that
+            if (TempImage != null && !TempImage.IsFloppy)
+            {
+                bootArgs.Add(new ShellArgument("cdrom", TempImage.DiskFile)
+                {
+                    HasQuotes = true
+                });
+            }
+
+            // Add normal cds
+            foreach (var cd in CdDrives)
             {
                 bootArgs.Add(new ShellArgument("cdrom", cd)
                 {
@@ -153,8 +164,18 @@ namespace CardinalLib.Machines
                 });
             }
 
+            // TODO Add floppy
+
             // Boot target
-            bootArgs.Add(new ShellArgument("boot", BootTarget));
+            // If temp image exists, and should be the boot disk, boot from it
+            if (TempImage != null && TempImage.IsBootDisk)
+            {
+                bootArgs.Add(new ShellArgument("boot", TempImage.DriveLetter));
+            }
+            else
+            {
+                bootArgs.Add(new ShellArgument("boot", BootTarget));
+            }
 
             // Kernel
             if (!string.IsNullOrEmpty(Kernel))

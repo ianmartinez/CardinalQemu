@@ -239,6 +239,14 @@ namespace CardinalQemu
             };
             disksCommand.Executed += OnDisks;
 
+            var mediaInsertCommand = new Command
+            {
+                MenuText = "Insert Media",
+                ToolBarText = "ISO/IMG",
+                Image = Icons.Get("media-optical")
+            };
+            mediaInsertCommand.Executed += OnMediaInsert;
+
             var settingsCommand = new Command
             {
                 MenuText = "Machine Settings",
@@ -283,6 +291,7 @@ namespace CardinalQemu
                     exportCommand,
                     cloneCommand,
                     new SeparatorToolItem() { Type = SeparatorToolItemType.FlexibleSpace },
+                    mediaInsertCommand,
                     startCommand,
                     settingsCommand
                 },
@@ -438,6 +447,17 @@ namespace CardinalQemu
         public void OnDisks(object sender, EventArgs e)
         {
             var disks = Disk.GetAll();
+        }
+
+        public void OnMediaInsert(object sender, EventArgs e)
+        {
+            var insertDiskDialog = new Dialogs.InsertDiskDialog(CurrentMachine?.TempImage);
+            var diskImage = insertDiskDialog.ShowModal(this);
+
+            if(diskImage != null && CurrentMachine != null)
+            {
+                CurrentMachine.TempImage = diskImage; 
+            }
         }
 
         // Application Menu

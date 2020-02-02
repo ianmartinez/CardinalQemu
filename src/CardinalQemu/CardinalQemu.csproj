@@ -24,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Dialogs\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\Icons24\config.png" />
@@ -62,6 +63,9 @@
     <None Remove="Resources\Icons64\media-playback-stop.png" />
     <None Remove="Resources\Icons64\refresh.png" />
     <None Remove="Resources\Icons64\vm.png" />
+    <None Remove="Resources\Icons64\media-optical.png" />
+    <None Remove="Resources\Icons32\media-optical.png" />
+    <None Remove="Resources\Icons24\media-optical.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Icons24\config.png" />
@@ -100,5 +104,8 @@
     <EmbeddedResource Include="Resources\Icons64\media-playback-stop.png" />
     <EmbeddedResource Include="Resources\Icons64\refresh.png" />
     <EmbeddedResource Include="Resources\Icons64\vm.png" />
+    <EmbeddedResource Include="Resources\Icons64\media-optical.png" />
+    <EmbeddedResource Include="Resources\Icons32\media-optical.png" />
+    <EmbeddedResource Include="Resources\Icons24\media-optical.png" />
   </ItemGroup>
 </Project>
