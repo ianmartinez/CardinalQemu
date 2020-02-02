@@ -114,7 +114,7 @@ namespace CardinalLib.Machines
             List<ShellArgument> bootArgs = new List<ShellArgument>();
 
             // RAM
-            bootArgs.Add(new ShellArgument("m", Ram.ToString()));
+            bootArgs.Add(new ShellArgument("m", ((int)Ram.Megabytes).ToString()));
 
 
             // CPU
