@@ -32,7 +32,7 @@ namespace CardinalQemu
         Scrollable MachineInfoPanel = new Scrollable
         {
             Visible = false,
-            Border = BorderType.None
+            Border = BorderType.None,Padding =0
         };
 
         // Machine Title
@@ -51,18 +51,34 @@ namespace CardinalQemu
 
         ImageView MachineIcon = new ImageView
         {
-            Image = Icons.Get("vm")
+            Image = Icons.Get("vm", IconSize.Large)
         };
 
         Label MachineTitle = new Label
         {
-            Font = new Font(SystemFont.Bold, 24)
+            Font = new Font(SystemFont.Bold, 26)
         };
 
         Label MachineArch = new Label
         {
             Font = new Font(SystemFont.Default)
         };
+
+        // Machine Ram Info
+        StackLayout RamCard = new StackLayout
+        {
+            Orientation = Orientation.Vertical,
+            Padding = new Padding(5),
+            HorizontalContentAlignment = HorizontalAlignment.Stretch
+        };
+
+        Label RamTitle = new Label
+        {
+            Font = new Font(SystemFont.Bold, 16),
+            Text = "RAM:"
+        };
+
+        Label RamValue = new Label {};
 
         // Machine Disk Info
         StackLayout DisksCard = new StackLayout
@@ -114,13 +130,20 @@ namespace CardinalQemu
             MachineSelector.SelectionChanged += OnChangeSelection;
 
             // Machine Info
-            int vPad = 20;
+            int vPad = 10;
+
             // Machine title header
             TitleCard.Items.Add(MachineIcon);
             TitleCard.Items.Add(TitleInnerPanel);
             TitleInnerPanel.Items.Add(MachineTitle);
             TitleInnerPanel.Items.Add(MachineArch);
             InfoStack.Items.Add(TitleCard);
+
+            // Ram
+            InfoStack.Items.Add(new Panel { Height = vPad });
+            InfoStack.Items.Add(RamCard);
+            RamCard.Items.Add(RamTitle);
+            RamCard.Items.Add(RamValue);
 
             // Disks
             InfoStack.Items.Add(new Panel { Height = vPad });
@@ -276,7 +299,7 @@ namespace CardinalQemu
         {
             Machines = Machine.GetAll();
             MachineSelectorItems.Clear();
-            var machineIcon =  Icons.Get("vm");
+            var machineIcon =  Icons.Get("vm", IconSize.Large);
 
             foreach (Machine machine in Machines)
             {
@@ -314,6 +337,7 @@ namespace CardinalQemu
             {
                 MachineTitle.Text = CurrentMachine.Name;
                 MachineArch.Text = CurrentMachine.Arch;
+                RamValue.Text = CurrentMachine.Ram.Format(ByteFormat.MB);
 
                 DisksInnerPanel.Items.Clear();
                 foreach(var disk in CurrentMachine.Disks)

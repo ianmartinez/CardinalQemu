@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml.XPath;
+using CardinalLib.Core;
 using CardinalLib.Guest;
 using CardinalLib.Hardware;
 using CardinalLib.Host;
@@ -39,7 +40,7 @@ namespace CardinalLib.Machines
         public string EmulatedMachine { get; set; }
 
         // Hardware
-        public long Ram { get; set; }
+        public ByteValue Ram { get; set; }
         public List<string> CdDrives { get; set; } = new List<string>();
         public List<Disk> Disks { get; set; } = new List<Disk>();
 
@@ -81,7 +82,7 @@ namespace CardinalLib.Machines
             BootTarget = nav.SelectSingleNode("/machine/setup/boot")?.Value;
 
             // Hardware
-            Ram = nav.SelectSingleNode("/machine/hardware/ram").ValueAsLong;
+            Ram = new ByteValue(nav.SelectSingleNode("/machine/hardware/ram").ValueAsLong, ByteFormat.MB);
 
             foreach(XPathNavigator hardware in nav.SelectSingleNode("/machine/hardware").Select("*"))
             {

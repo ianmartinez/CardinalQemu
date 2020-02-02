@@ -228,7 +228,7 @@ namespace CardinalLib.Core
         /// <returns>The formatted value</returns>
         public string Format(ByteFormat format, int numBase = -1)
         {
-            return ByteValue.Format(Bytes, format, (numBase == -1) ? Base : numBase);
+            return Format(Get(format), format, (numBase == -1) ? Base : numBase);
         }
 
         /// <summary>
