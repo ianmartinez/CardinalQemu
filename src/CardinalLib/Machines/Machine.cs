@@ -145,7 +145,6 @@ namespace CardinalLib.Machines
             }
 
             // CDs
-
             // If temp image exists and is a cd, add that
             if (TempImage != null && !TempImage.IsFloppy)
             {

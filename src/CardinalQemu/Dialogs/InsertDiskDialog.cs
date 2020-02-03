@@ -22,7 +22,7 @@ namespace CardinalQemu.Dialogs
         };
 
         Button SelectDiskButton = new Button {
-            Text = "..."
+            Text = "...", Width = -1
         };
 
         CheckBox BootDiskCheckBox = new CheckBox
@@ -80,7 +80,7 @@ namespace CardinalQemu.Dialogs
                 VerticalContentAlignment = VerticalAlignment.Center
             };
 
-            innerStack.Items.Add(FileNameTextBox);
+            innerStack.Items.Add(new StackLayoutItem(FileNameTextBox, true));
             innerStack.Items.Add(SelectDiskButton);
             dialogStack.Items.Add(innerStack);
 
@@ -103,12 +103,19 @@ namespace CardinalQemu.Dialogs
 
         private void SelectResultButton_Click(object sender, EventArgs e)
         {
-            Result = new DiskImage
+            if (!string.IsNullOrEmpty(FileNameTextBox.Text))
             {
-                DiskFile = FileNameTextBox.Text,
-                IsFloppy = (bool)FloppyCheckBox.Checked,
-                IsBootDisk = (bool)BootDiskCheckBox.Checked
-            };
+                Result = new DiskImage
+                {
+                    DiskFile = FileNameTextBox.Text,
+                    IsFloppy = (bool)FloppyCheckBox.Checked,
+                    IsBootDisk = (bool)BootDiskCheckBox.Checked
+                };
+            }
+            else
+            {
+                Result = null;
+            }
 
             Close();
         }

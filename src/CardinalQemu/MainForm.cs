@@ -230,6 +230,7 @@ namespace CardinalQemu
                 ToolBarText = "Refresh",
                 Image = Icons.Get("refresh")
             };
+            refreshCommand.Executed += OnRefresh;
 
             var disksCommand = new Command
             {
@@ -290,6 +291,7 @@ namespace CardinalQemu
                     importCommand,
                     exportCommand,
                     cloneCommand,
+                    refreshCommand,
                     new SeparatorToolItem() { Type = SeparatorToolItemType.FlexibleSpace },
                     mediaInsertCommand,
                     startCommand,
@@ -397,6 +399,11 @@ namespace CardinalQemu
         // Machine Menu
         public void OnNew(object sender, EventArgs e)
         {
+        }
+
+        private void OnRefresh(object sender, EventArgs e)
+        {
+            LoadMachines();
         }
 
         FileFilter[] filters = {
