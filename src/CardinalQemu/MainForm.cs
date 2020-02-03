@@ -64,6 +64,23 @@ namespace CardinalQemu
             Font = new Font(SystemFont.Default)
         };
 
+        // Machine Notes
+        StackLayout NotesCard = new StackLayout
+        {
+            Orientation = Orientation.Vertical,
+            Padding = new Padding(5),
+            HorizontalContentAlignment = HorizontalAlignment.Stretch
+        };
+
+        Label NotesTitle = new Label
+        {
+            Font = new Font(SystemFont.Bold, 16),
+            Text = "Notes:"
+        };
+
+        Label NotesValue = new Label {
+        };
+
         // Machine Ram Info
         StackLayout RamCard = new StackLayout
         {
@@ -138,6 +155,12 @@ namespace CardinalQemu
             TitleInnerPanel.Items.Add(MachineTitle);
             TitleInnerPanel.Items.Add(MachineArch);
             InfoStack.Items.Add(TitleCard);
+
+            // Ram
+            InfoStack.Items.Add(new Panel { Height = vPad });
+            InfoStack.Items.Add(NotesCard);
+            NotesCard.Items.Add(NotesTitle);
+            NotesCard.Items.Add(NotesValue);
 
             // Ram
             InfoStack.Items.Add(new Panel { Height = vPad });
@@ -348,6 +371,9 @@ namespace CardinalQemu
             {
                 MachineTitle.Text = CurrentMachine.Name;
                 MachineArch.Text = CurrentMachine.Arch;
+
+                NotesCard.Visible = !string.IsNullOrEmpty(CurrentMachine.Notes);
+                NotesValue.Text = CurrentMachine.Notes;
                 RamValue.Text = CurrentMachine.Ram.Format(ByteFormat.MB);
 
                 DisksInnerPanel.Items.Clear();
