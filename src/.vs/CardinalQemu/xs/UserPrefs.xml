@@ -2,10 +2,11 @@
   <MonoDevelop.Ide.ItemProperties.CardinalQemu HideGettingStarted="True" />
   <MonoDevelop.Ide.Workbench ActiveDocument="CardinalQemu/MainForm.cs">
     <Files>
-      <File FileName="CardinalLib/Machines/Machine.cs" Line="193" Column="14" />
-      <File FileName="CardinalQemu/MainForm.cs" Line="332" Column="30" />
-      <File FileName="CardinalQemu/Dialogs/InsertDiskDialog.cs" Line="117" Column="31" />
-      <File FileName="CardinalQemu.XamMac/Program.cs" Line="1" Column="1" />
+      <File FileName="CardinalLib/Machines/Machine.cs" Line="28" Column="37" />
+      <File FileName="CardinalQemu/MainForm.cs" Line="376" Column="64" />
+      <File FileName="CardinalQemu/Dialogs/InsertDiskDialog.cs" />
+      <File FileName="CardinalQemu.XamMac/Program.cs" />
+      <File FileName="CardinalQemu/Resources.resx" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

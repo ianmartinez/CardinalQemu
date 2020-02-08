@@ -5,6 +5,7 @@ using CardinalLib.Qemu;
 using CardinalLib.Hardware;
 using CardinalLib.Machines;
 using CardinalLib.Core;
+using System.Linq;
 
 namespace CardinalQemu
 {
@@ -373,7 +374,7 @@ namespace CardinalQemu
                 MachineArch.Text = CurrentMachine.Arch;
 
                 NotesCard.Visible = !string.IsNullOrEmpty(CurrentMachine.Notes);
-                NotesValue.Text = CurrentMachine.Notes;
+                NotesValue.Text = CurrentMachine.FormattedNotes;
                 RamValue.Text = CurrentMachine.Ram.Format(ByteFormat.MB);
 
                 DisksInnerPanel.Items.Clear();
@@ -429,7 +430,20 @@ namespace CardinalQemu
 
         private void OnRefresh(object sender, EventArgs e)
         {
+            var lastSelected = CurrentMachine;
+
             LoadMachines();
+
+            if (lastSelected != null)
+            {
+                var matchingMachine = (from machine in Machines
+                                      where machine.RootDirectory.Equals(lastSelected.RootDirectory)
+                                      select machine).FirstOrDefault();
+                if (matchingMachine != null)
+                {
+                    MachineSelector.SelectedRow = Array.IndexOf(Machines, matchingMachine);
+                }
+            }
         }
 
         FileFilter[] filters = {

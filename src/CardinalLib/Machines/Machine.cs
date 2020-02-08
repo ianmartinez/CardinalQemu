@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.XPath;
 using CardinalLib.Core;
@@ -15,13 +17,31 @@ namespace CardinalLib.Machines
         public const bool FORCE_SDL_ON_WINDOWS = true;
 
         #region "Properties"
-        public string MachineDirectory { get; private set; }
+        public string RootDirectory { get; private set; }
         public App SystemApp { get; private set; }
         public bool CanBoot => SystemApp != null;
 
         // Info
         public string Name { get; set; }
         public string Notes { get; set; }
+        // Remove all the padding from notes string
+        public string FormattedNotes
+        {
+            get
+            {
+                if (Notes != null)
+                {
+                    var trimmed = from line
+                                  in Notes.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
+                                  select line.Trim();
+                    return string.Join("\n", trimmed);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
         public OsInfo Os { get; set; }
         public bool IsRunning { get; private set; }
 
@@ -58,7 +78,7 @@ namespace CardinalLib.Machines
         public Machine(string machineFile)
         {
             // Get the directory that the file is in
-            MachineDirectory = Path.GetDirectoryName(machineFile);
+            RootDirectory = Path.GetDirectoryName(machineFile);
 
             // Read the machine.xml file
             var docNav = new XPathDocument(machineFile);
@@ -206,7 +226,7 @@ namespace CardinalLib.Machines
 
             newText = Variable.Replace(newText, "HOME", Directories.UserHome, true);
             newText = Variable.Replace(newText, "MACHINES", Directories.Machines, true);
-            newText = Variable.Replace(newText, "CURRENT", MachineDirectory, true);
+            newText = Variable.Replace(newText, "CURRENT", RootDirectory, true);
             newText = Variable.Replace(newText, "DISKS", Directories.Disks, true);
 
             return newText;
@@ -216,7 +236,7 @@ namespace CardinalLib.Machines
         {
             string newText = (string)text.Clone();
 
-            newText = Variable.Reverse(newText, "CURRENT", MachineDirectory);
+            newText = Variable.Reverse(newText, "CURRENT", RootDirectory);
             newText = Variable.Reverse(newText, "DISKS", Directories.Disks);
             newText = Variable.Reverse(newText, "MACHINES", Directories.Machines);
             newText = Variable.Reverse(newText, "HOME", Directories.UserHome);
