@@ -3,9 +3,10 @@ using Eto.Forms;
 
 namespace CardinalQemu
 {
-    public class InputControl<T> : StackLayout where T : Control
+    public class InputControl<TControl> : StackLayout where TControl : Control
     {
-        private Label TitleLabel { get; set; } = new Label();
+        public Label TitleLabel { get; set; } = new Label();
+        public TControl Input { get; set; }
 
         public string Title
         {
@@ -13,11 +14,9 @@ namespace CardinalQemu
             set => TitleLabel.Text = value;
         }
 
-        public T Value { get; set; }
-
-        public InputControl(T control)
+        public InputControl(TControl control)
         {
-            Value = control;
+            Input = control;
 
             Orientation = Orientation.Vertical;
             VerticalContentAlignment = VerticalAlignment.Center;
@@ -25,8 +24,8 @@ namespace CardinalQemu
             Padding = new Padding(10, 10);
             Spacing = 5;
 
-            Items.Add(Title);
-            Items.Add(Value);
+            Items.Add(TitleLabel);
+            Items.Add(Input);
         }
     }
 }
