@@ -426,6 +426,13 @@ namespace CardinalQemu
         // Machine Menu
         public void OnNew(object sender, EventArgs e)
         {
+            var newMachineDialog = new Dialogs.NewMachineDialog();
+            var newMachine = newMachineDialog.ShowModal(this);
+
+            if (newMachine != null)
+            {
+                
+            }
         }
 
         private void OnRefresh(object sender, EventArgs e)
