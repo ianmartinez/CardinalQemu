@@ -33,7 +33,7 @@ namespace CardinalQemu
         Scrollable MachineInfoPanel = new Scrollable
         {
             Visible = false,
-            Border = BorderType.None,Padding =0
+            Border = BorderType.None,Padding = 0
         };
 
         // Machine Title

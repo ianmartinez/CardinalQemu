@@ -21,7 +21,7 @@ namespace CardinalQemu
             Orientation = Orientation.Vertical;
             VerticalContentAlignment = VerticalAlignment.Center;
             HorizontalContentAlignment = HorizontalAlignment.Stretch;
-            Padding = new Padding(10, 10);
+            Padding = new Padding(0, 0);
             Spacing = 5;
 
             Items.Add(TitleLabel);

@@ -121,9 +121,6 @@
         }
       },
       "CardinalLib/1.0.0": {
-        "dependencies": {
-          "Eto.Forms": "2.4.1"
-        },
         "runtime": {
           "CardinalLib.dll": {}
         }

@@ -54,9 +54,6 @@
       "CardinalLib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Eto.Forms": "2.4.1"
-        },
         "compile": {
           "bin/placeholder/CardinalLib.dll": {}
         },
@@ -132,9 +129,6 @@
       "CardinalLib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Eto.Forms": "2.4.1"
-        },
         "compile": {
           "bin/placeholder/CardinalLib.dll": {}
         },
@@ -210,9 +204,6 @@
       "CardinalLib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Eto.Forms": "2.4.1"
-        },
         "compile": {
           "bin/placeholder/CardinalLib.dll": {}
         },
@@ -288,9 +279,6 @@
       "CardinalLib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Eto.Forms": "2.4.1"
-        },
         "compile": {
           "bin/placeholder/CardinalLib.dll": {}
         },

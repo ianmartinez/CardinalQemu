@@ -11,9 +11,6 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Eto.Forms" Version="2.4.1" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Remove="Native\NativeForm.cs" />
     <Compile Remove="Native\IPanel.cs" />
     <Compile Remove="Native\INativeControlManager.cs" />
