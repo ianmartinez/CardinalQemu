@@ -1,5 +1,4 @@
 ﻿using System;
-using CardinalLib;
 using CardinalLib.Machines;
 using Eto.Drawing;
 using Eto.Forms;
