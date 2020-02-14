@@ -7,25 +7,21 @@ namespace CardinalQemu.Dialogs
 {
     public class NewMachineDialog : Dialog<Machine>
     {
-
         // Tabs
         TabControl DialogTabs = new TabControl { };
-        TabPage MainPage = new TabPage { Text = "Main" };
-        TabPage MemoryPage = new TabPage { Text = "Memory" };
         TabPage DisksPage = new TabPage { Text = "Disks" };
-
-        // Layouts
-        TableLayout MainPageLayout = new TableLayout
-        {
-            Padding = new Padding(10, 10),
-            Spacing = new Size(15, 10)
-        };
 
         // Buttons
         Button CreateResultButton = new Button{ Text = "Create" };
         Button CancelResultButton = new Button { Text = "Cancel" };
 
-        // Main Tab
+        // Main Page
+        TabPage MainPage = new TabPage { Text = "Main" };
+        TableLayout MainPageLayout = new TableLayout
+        {
+            Padding = new Padding(10, 10),
+            Spacing = new Size(15, 10)
+        };
         InputControl<TextBox> MachineName = new InputControl<TextBox>(new TextBox()) {
             Title = "Machine Name:"
         };
@@ -50,6 +46,18 @@ namespace CardinalQemu.Dialogs
             Title = "OS Version"
         };
 
+        // Memory Page
+        TabPage MemoryPage = new TabPage { Text = "Memory" };
+        TableLayout MemoryPageLayout = new TableLayout
+        {
+            Padding = new Padding(10, 10),
+            Spacing = new Size(15, 10)
+        };
+        InputControl<NumericStepper> RamInput = new InputControl<NumericStepper>(new NumericStepper())
+        {
+            Title = "Ram"
+        };
+
         public NewMachineDialog()
         {
             Title = "New Machine";
@@ -71,25 +79,31 @@ namespace CardinalQemu.Dialogs
             };
             dialogStack.Items.Add(new StackLayoutItem(DialogTabs, true));
 
+            // Setup main page
             DialogTabs.Pages.Add(MainPage);
             MainPageLayout.Rows.Add(new TableRow(
                 new TableCell(MachineName, true),
                 new TableCell(MachineArch, true)
             ));
             MainPageLayout.Rows.Add(new TableRow(
-               new TableCell(OsFamily, true),
-               new TableCell(OsName, true)
-           ));
+                new TableCell(OsFamily, true),
+                new TableCell(OsName, true)
+            ));
             MainPageLayout.Rows.Add(new TableRow(
-               new TableCell(OsVersion, true),
-               new TableCell(new Panel(), true)
-           )); 
-
+                new TableCell(OsVersion, true),
+                new TableCell(new Panel(), true)
+            )); 
             MainPage.Content = MainPageLayout;
 
+            // Setup Memory Page
             DialogTabs.Pages.Add(MemoryPage);
-            DialogTabs.Pages.Add(DisksPage);
+            MemoryPageLayout.Rows.Add(new TableRow(
+               new TableCell(RamInput, true),
+               new TableCell(new Panel(), true)
+            ));
+            MemoryPage.Content = MemoryPageLayout;
 
+            DialogTabs.Pages.Add(DisksPage);
 
             Content = dialogStack;
 
