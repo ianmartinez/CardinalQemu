@@ -28,22 +28,22 @@ namespace CardinalQemu.Dialogs
 
         InputControl<DropDown> MachineArch = new InputControl<DropDown>(new DropDown())
         {
-            Title = "Architecture"
+            Title = "Architecture:"
         };
 
         InputControl<DropDown> OsFamily = new InputControl<DropDown>(new DropDown())
         {
-            Title = "OS Family"
+            Title = "OS Family:"
         };
 
         InputControl<DropDown> OsName = new InputControl<DropDown>(new DropDown())
         {
-            Title = "OS Name"
+            Title = "OS Name:"
         };
 
         InputControl<DropDown> OsVersion = new InputControl<DropDown>(new DropDown())
         {
-            Title = "OS Version"
+            Title = "OS Version:"
         };
 
         // Memory Page
@@ -55,7 +55,7 @@ namespace CardinalQemu.Dialogs
         };
         InputControl<NumericStepper> RamInput = new InputControl<NumericStepper>(new NumericStepper())
         {
-            Title = "Ram"
+            Title = "RAM (MB):"
         };
 
         public NewMachineDialog()

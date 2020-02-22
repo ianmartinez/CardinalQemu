@@ -1,0 +1,8 @@
+linux-generic: 
+	https://commons.wikimedia.org/wiki/File:Tux_Enhanced.svg
+	from https://www.pling.com/p/1102260/
+linux-opensuse:
+	https://commons.wikimedia.org/wiki/File:OpenSUSE_Geeko_button.svg
+
+ms-dos-generic:
+	https://commons.wikimedia.org/wiki/File:MS_DOS.svg
