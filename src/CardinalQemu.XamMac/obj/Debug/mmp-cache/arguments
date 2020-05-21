@@ -1,8 +1,7 @@
-# Version: 6.10.0.17 (xcode11.3): 5f802ef53)
-# [first argument, ignore] # /Library/Frameworks/Xamarin.Mac.framework/Versions/6.10.0.17/lib/mmp/mmp.exe
-/Library/Frameworks/Xamarin.Mac.framework/Versions/6.10.0.17/lib/mmp/mmp.exe \
-	/verbose \
-	' /debug' \
+# Version: 6.16.0.13 (d16-5-xcode11.4): b75deaf82)
+# [first argument, ignore] # /Library/Frameworks/Xamarin.Mac.framework/Versions/6.16.0.13/lib/mmp/mmp.exe
+/Library/Frameworks/Xamarin.Mac.framework/Versions/6.16.0.13/lib/mmp/mmp.exe \
+	/debug \
 	/output:/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/bin/Debug/ \
 	/name:CardinalQemu.XamMac \
 	' /profile:Xamarin.Mac,Version=v2.0,Profile=Mobile' \
@@ -158,11 +157,15 @@
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Facades/System.Xml.XPath.XDocument.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Facades/System.Xml.XPath.XmlDocument.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Facades/System.Xml.Xsl.Primitives.dll \
-	/assembly:/Users/ianmartinez/.nuget/packages/eto.forms/2.4.1/lib/netstandard1.0/Eto.dll \
-	/assembly:/Users/ianmartinez/.nuget/packages/eto.platform.xammac2/2.4.1/lib/xamarin.mac2/Eto.XamMac2.dll \
+	/assembly:/Users/ianmartinez/.nuget/packages/eto.forms/2.5.0/lib/netstandard2.0/Eto.dll \
+	/assembly:/Users/ianmartinez/.nuget/packages/eto.platform.xammac2/2.5.0/lib/xamarinmac20/Eto.XamMac2.dll \
 	/assembly:/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/bin/Debug/netstandard2.0/CardinalQemu.dll \
 	/assembly:/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/bin/Debug/netstandard2.0/CardinalLib.dll \
 	/root-assembly:/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/bin/Debug/CardinalQemu.XamMac.exe \
 	/sdkroot:/Applications/Xcode.app/Contents/Developer \
 	--cache:/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/mmp-cache \
 	@/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/response-file.rsp \
+	-q \
+	-q \
+	-q \
+	-q \

@@ -16,16 +16,14 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="CardinalQemu" expanded="True">
+          <Node name="CardinalQemu" expanded="True" selected="True">
             <Node name="CardinalLib" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Hardware" expanded="True" />
               <Node name="Machines" expanded="True" />
             </Node>
             <Node name="CardinalQemu" expanded="True">
-              <Node name="Dialogs" expanded="True">
-                <Node name="NewMachineDialog.cs" selected="True" />
-              </Node>
+              <Node name="Dialogs" expanded="True" />
               <Node name="Resources" expanded="True" />
             </Node>
             <Node name="CardinalQemu.Gtk" expanded="True" />

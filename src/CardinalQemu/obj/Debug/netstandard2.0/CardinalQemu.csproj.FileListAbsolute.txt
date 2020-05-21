@@ -11,3 +11,4 @@
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.csproj.CopyComplete
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.dll
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.pdb
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/obj/Debug/netstandard2.0/CardinalQemu.csproj.CoreCompileInputs.cache
