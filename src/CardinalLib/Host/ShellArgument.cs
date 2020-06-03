@@ -65,7 +65,7 @@ namespace CardinalLib.Host
         /// <returns>A string array of arguments</returns>
         public static string[] ToArray(params ShellArgument[] args)
         {
-            List<string> argStrings = new List<string>();
+            var argStrings = new List<string>();
 
             foreach (var arg in args)
             {

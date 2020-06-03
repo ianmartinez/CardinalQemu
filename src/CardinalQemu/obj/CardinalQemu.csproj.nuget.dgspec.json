@@ -95,7 +95,7 @@
           "dependencies": {
             "Eto.Forms": {
               "target": "Package",
-              "version": "[2.5.0, )"
+              "version": "[2.5.2, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

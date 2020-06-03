@@ -10,21 +10,21 @@
       "CardinalQemu/1.0.0": {
         "dependencies": {
           "CardinalLib": "1.0.0",
-          "Eto.Forms": "2.5.0",
+          "Eto.Forms": "2.5.2",
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
           "CardinalQemu.dll": {}
         }
       },
-      "Eto.Forms/2.5.0": {
+      "Eto.Forms/2.5.2": {
         "dependencies": {
           "System.ComponentModel.Annotations": "4.7.0"
         },
         "runtime": {
           "lib/netstandard2.0/Eto.dll": {
             "assemblyVersion": "2.5.0.0",
-            "fileVersion": "2.5.7354.32680"
+            "fileVersion": "2.5.7453.35170"
           }
         }
       },
@@ -55,12 +55,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Eto.Forms/2.5.0": {
+    "Eto.Forms/2.5.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7BZBtN2Zg5qzwIwtBAPUp4fU529M7kD6J4WiXYM0/T58+H2ZBzYYk89+FTSE178TwhkDnP0EE6zeqmbla4zS4Q==",
-      "path": "eto.forms/2.5.0",
-      "hashPath": "eto.forms.2.5.0.nupkg.sha512"
+      "sha512": "sha512-WkXAiBoNdThf5Sn5aKsmIf0JlAxWwhRkJVPXaC7jpg8tBSvvMlZGSztbzk/EUZTrBz1eHHvpcVyAjlStT4zwgg==",
+      "path": "eto.forms/2.5.2",
+      "hashPath": "eto.forms.2.5.2.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

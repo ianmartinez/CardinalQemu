@@ -522,7 +522,7 @@ namespace CardinalQemu
                 Title = string.Format("About Cardinal QEMU {0}", AppInfo.FormattedVersion),
                 Version = string.Format("Version {0}", AppInfo.FormattedVersion),
                 Copyright = string.Format("©2019-{0} Ian Martinez", AppInfo.CopyrightYear),
-                ProgramDescription = "A cross-platform GUI for QEMU"
+                ProgramDescription = "A cross-platform GUI for QEMU."
             };
 
             aboutDialog.ShowDialog(this);

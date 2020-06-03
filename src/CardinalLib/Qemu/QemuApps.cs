@@ -11,13 +11,14 @@ namespace CardinalLib.Qemu
     {
         // If the app cache has been loaded
         private static bool initialized;
+
         // Store a cache of apps that is only loaded once at first use
         private static List<App> appCache = new List<App>();
 
         /// <summary>
         /// Reload the cache of apps
         /// </summary>
-        public static void ReloadApps()
+        public static void LoadApps()
         {
             appCache.Clear();
             appCache.AddRange(new App[] {
@@ -71,7 +72,7 @@ namespace CardinalLib.Qemu
         public static App Get(string name)
         {
             if (!initialized)
-                ReloadApps();
+                LoadApps();
 
             return (from app in appCache
                     where app.Exists && app.Name == name
@@ -86,7 +87,7 @@ namespace CardinalLib.Qemu
             get
             {
                 if (!initialized)
-                    ReloadApps();
+                    LoadApps();
 
                 return from app in appCache
                        where app.Exists && app.Name.StartsWith("qemu-system-")

@@ -33,6 +33,7 @@ namespace CardinalLib.Qemu
             {
                 // Split key:value along the delimeter
                 var kvSplit = line.Split(new[] { delimeter }, StringSplitOptions.RemoveEmptyEntries);
+
                 if(kvSplit.Length > 1) // Is a key value line
                 {
                     var key = kvSplit[0].Trim();

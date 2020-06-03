@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "Xamarin.Mac,Version=v2.0": {
-      "Eto.Forms/2.5.0": {
+      "Eto.Forms/2.5.2": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel.Annotations": "4.7.0"
@@ -63,7 +63,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CardinalLib": "1.0.0",
-          "Eto.Forms": "2.5.0"
+          "Eto.Forms": "2.5.2"
         },
         "compile": {
           "bin/placeholder/CardinalQemu.dll": {}
@@ -74,7 +74,7 @@
       }
     },
     "Xamarin.Mac,Version=v2.0/win": {
-      "Eto.Forms/2.5.0": {
+      "Eto.Forms/2.5.2": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel.Annotations": "4.7.0"
@@ -135,7 +135,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CardinalLib": "1.0.0",
-          "Eto.Forms": "2.5.0"
+          "Eto.Forms": "2.5.2"
         },
         "compile": {
           "bin/placeholder/CardinalQemu.dll": {}
@@ -146,7 +146,7 @@
       }
     },
     "Xamarin.Mac,Version=v2.0/win-x64": {
-      "Eto.Forms/2.5.0": {
+      "Eto.Forms/2.5.2": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel.Annotations": "4.7.0"
@@ -207,7 +207,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CardinalLib": "1.0.0",
-          "Eto.Forms": "2.5.0"
+          "Eto.Forms": "2.5.2"
         },
         "compile": {
           "bin/placeholder/CardinalQemu.dll": {}
@@ -218,7 +218,7 @@
       }
     },
     "Xamarin.Mac,Version=v2.0/win-x86": {
-      "Eto.Forms/2.5.0": {
+      "Eto.Forms/2.5.2": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel.Annotations": "4.7.0"
@@ -279,7 +279,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CardinalLib": "1.0.0",
-          "Eto.Forms": "2.5.0"
+          "Eto.Forms": "2.5.2"
         },
         "compile": {
           "bin/placeholder/CardinalQemu.dll": {}
@@ -291,16 +291,16 @@
     }
   },
   "libraries": {
-    "Eto.Forms/2.5.0": {
-      "sha512": "7BZBtN2Zg5qzwIwtBAPUp4fU529M7kD6J4WiXYM0/T58+H2ZBzYYk89+FTSE178TwhkDnP0EE6zeqmbla4zS4Q==",
+    "Eto.Forms/2.5.2": {
+      "sha512": "WkXAiBoNdThf5Sn5aKsmIf0JlAxWwhRkJVPXaC7jpg8tBSvvMlZGSztbzk/EUZTrBz1eHHvpcVyAjlStT4zwgg==",
       "type": "package",
-      "path": "eto.forms/2.5.0",
+      "path": "eto.forms/2.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Eto-LICENSE.txt",
         "build/Eto.Forms.targets",
-        "eto.forms.2.5.0.nupkg.sha512",
+        "eto.forms.2.5.2.nupkg.sha512",
         "eto.forms.nuspec",
         "lib/netstandard1.0/Eto.dll",
         "lib/netstandard1.0/Eto.xml",

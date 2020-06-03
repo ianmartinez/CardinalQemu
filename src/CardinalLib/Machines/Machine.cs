@@ -205,8 +205,9 @@ namespace CardinalLib.Machines
                 });
             }
 
-            /* Force SDL on Windows, the default GTK display 
-               is too buggy and cursors jump out of guest randomly */
+            // Force SDL on Windows, since the default GTK display 
+            // used by QEMU is too buggy and cursors jump out of
+            // guest randomly 
             if(HostSystem.IsWindows && FORCE_SDL_ON_WINDOWS)
             {
                 bootArgs.Add(new ShellArgument("display", "sdl"));
@@ -248,7 +249,7 @@ namespace CardinalLib.Machines
         #region "Static"
         public static Machine[] GetAll()
         {
-            List<Machine> machines = new List<Machine>();
+            var machines = new List<Machine>();
 
             // Create a new machine for each file
             foreach (var machineFolder in Directory.EnumerateDirectories(Directories.Machines))
