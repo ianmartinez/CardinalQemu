@@ -49,7 +49,10 @@ namespace CardinalQemu
             if (resolution == IconResolution.Retina && HostSystem.IsMacOS)
                 sizePx /= 2;
 
-            var icon = Icon.FromResource(string.Format("{0}.{1}.png", iconFolder, name)).WithSize(sizePx, sizePx);
+            var iconPath = string.Format("{0}.{1}.png", iconFolder, name);
+            var iconResource = Icon.FromResource(iconPath);
+            var icon = iconResource.WithSize(sizePx, sizePx);
+
             return icon;
         }
     }

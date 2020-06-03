@@ -17,10 +17,10 @@
           "build/_._": {}
         }
       },
-      "Eto.Platform.XamMac2/2.5.0": {
+      "Eto.Platform.XamMac2/2.5.2": {
         "type": "package",
         "dependencies": {
-          "Eto.Forms": "2.5.0"
+          "Eto.Forms": "2.5.2"
         },
         "frameworkAssemblies": [
           "System",
@@ -89,10 +89,10 @@
           "build/_._": {}
         }
       },
-      "Eto.Platform.XamMac2/2.5.0": {
+      "Eto.Platform.XamMac2/2.5.2": {
         "type": "package",
         "dependencies": {
-          "Eto.Forms": "2.5.0"
+          "Eto.Forms": "2.5.2"
         },
         "frameworkAssemblies": [
           "System",
@@ -161,10 +161,10 @@
           "build/_._": {}
         }
       },
-      "Eto.Platform.XamMac2/2.5.0": {
+      "Eto.Platform.XamMac2/2.5.2": {
         "type": "package",
         "dependencies": {
-          "Eto.Forms": "2.5.0"
+          "Eto.Forms": "2.5.2"
         },
         "frameworkAssemblies": [
           "System",
@@ -233,10 +233,10 @@
           "build/_._": {}
         }
       },
-      "Eto.Platform.XamMac2/2.5.0": {
+      "Eto.Platform.XamMac2/2.5.2": {
         "type": "package",
         "dependencies": {
-          "Eto.Forms": "2.5.0"
+          "Eto.Forms": "2.5.2"
         },
         "frameworkAssemblies": [
           "System",
@@ -308,10 +308,10 @@
         "lib/netstandard2.0/Eto.xml"
       ]
     },
-    "Eto.Platform.XamMac2/2.5.0": {
-      "sha512": "dO/ZMwPgEwZyp0y0k7PwbAU9HBiYYCSsK6CKW5BIbqfuY0DAskLZ5GNue+YJNx3qaqwbw4/tVUU6I5xCpldgDw==",
+    "Eto.Platform.XamMac2/2.5.2": {
+      "sha512": "GlM9pC63SMeD5YuJsJf4Os4Il/iq47bHukmm9HSTMDZYYGWZAsAx7moDa5pEjQcICqaTF+AzvdekRZmwIe4+jA==",
       "type": "package",
-      "path": "eto.platform.xammac2/2.5.0",
+      "path": "eto.platform.xammac2/2.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -327,7 +327,7 @@
         "build/README.txt",
         "build/RunConfiguration.Default.targets",
         "build/RunConfiguration.Mac.targets",
-        "eto.platform.xammac2.2.5.0.nupkg.sha512",
+        "eto.platform.xammac2.2.5.2.nupkg.sha512",
         "eto.platform.xammac2.nuspec",
         "lib/net45/Eto.XamMac2.dll",
         "lib/xamarinmac20/Eto.XamMac2.dll"
@@ -436,7 +436,7 @@
   "projectFileDependencyGroups": {
     "Xamarin.Mac,Version=v2.0": [
       "CardinalQemu >= 1.0.0",
-      "Eto.Platform.XamMac2 >= 2.5.0"
+      "Eto.Platform.XamMac2 >= 2.5.2"
     ]
   },
   "packageFolders": {
@@ -476,7 +476,7 @@
         "dependencies": {
           "Eto.Platform.XamMac2": {
             "target": "Package",
-            "version": "[2.5.0, )"
+            "version": "[2.5.2, )"
           }
         }
       }

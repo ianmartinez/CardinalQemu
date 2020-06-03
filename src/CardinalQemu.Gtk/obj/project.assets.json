@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "AtkSharp/3.22.25.56": {
+      "AtkSharp/3.22.25.74": {
         "type": "package",
         "dependencies": {
-          "GLibSharp": "3.22.25.56"
+          "GLibSharp": "3.22.25.74"
         },
         "compile": {
           "lib/netstandard2.0/AtkSharp.dll": {}
@@ -14,7 +14,7 @@
           "lib/netstandard2.0/AtkSharp.dll": {}
         }
       },
-      "CairoSharp/3.22.25.56": {
+      "CairoSharp/3.22.25.74": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/CairoSharp.dll": {}
@@ -38,11 +38,11 @@
           "build/_._": {}
         }
       },
-      "Eto.Platform.Gtk/2.5.0": {
+      "Eto.Platform.Gtk/2.5.2": {
         "type": "package",
         "dependencies": {
-          "Eto.Forms": "2.5.0",
-          "GtkSharp": "3.22.25.56"
+          "Eto.Forms": "2.5.2",
+          "GtkSharp": "3.22.25.74"
         },
         "compile": {
           "lib/netstandard2.0/Eto.Gtk.dll": {}
@@ -51,13 +51,13 @@
           "lib/netstandard2.0/Eto.Gtk.dll": {}
         }
       },
-      "GdkSharp/3.22.25.56": {
+      "GdkSharp/3.22.25.74": {
         "type": "package",
         "dependencies": {
-          "CairoSharp": "3.22.25.56",
-          "GLibSharp": "3.22.25.56",
-          "GioSharp": "3.22.25.56",
-          "PangoSharp": "3.22.25.56"
+          "CairoSharp": "3.22.25.74",
+          "GLibSharp": "3.22.25.74",
+          "GioSharp": "3.22.25.74",
+          "PangoSharp": "3.22.25.74"
         },
         "compile": {
           "lib/netstandard2.0/GdkSharp.dll": {}
@@ -66,10 +66,10 @@
           "lib/netstandard2.0/GdkSharp.dll": {}
         }
       },
-      "GioSharp/3.22.25.56": {
+      "GioSharp/3.22.25.74": {
         "type": "package",
         "dependencies": {
-          "GLibSharp": "3.22.25.56"
+          "GLibSharp": "3.22.25.74"
         },
         "compile": {
           "lib/netstandard2.0/GioSharp.dll": {}
@@ -78,7 +78,7 @@
           "lib/netstandard2.0/GioSharp.dll": {}
         }
       },
-      "GLibSharp/3.22.25.56": {
+      "GLibSharp/3.22.25.74": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/GLibSharp.dll": {}
@@ -87,15 +87,15 @@
           "lib/netstandard2.0/GLibSharp.dll": {}
         }
       },
-      "GtkSharp/3.22.25.56": {
+      "GtkSharp/3.22.25.74": {
         "type": "package",
         "dependencies": {
-          "AtkSharp": "3.22.25.56",
-          "CairoSharp": "3.22.25.56",
-          "GLibSharp": "3.22.25.56",
-          "GdkSharp": "3.22.25.56",
-          "GioSharp": "3.22.25.56",
-          "PangoSharp": "3.22.25.56"
+          "AtkSharp": "3.22.25.74",
+          "CairoSharp": "3.22.25.74",
+          "GLibSharp": "3.22.25.74",
+          "GdkSharp": "3.22.25.74",
+          "GioSharp": "3.22.25.74",
+          "PangoSharp": "3.22.25.74"
         },
         "compile": {
           "lib/netstandard2.0/GtkSharp.dll": {}
@@ -107,11 +107,11 @@
           "build/_._": {}
         }
       },
-      "PangoSharp/3.22.25.56": {
+      "PangoSharp/3.22.25.74": {
         "type": "package",
         "dependencies": {
-          "CairoSharp": "3.22.25.56",
-          "GLibSharp": "3.22.25.56"
+          "CairoSharp": "3.22.25.74",
+          "GLibSharp": "3.22.25.74"
         },
         "compile": {
           "lib/netstandard2.0/PangoSharp.dll": {}
@@ -160,26 +160,26 @@
     }
   },
   "libraries": {
-    "AtkSharp/3.22.25.56": {
-      "sha512": "BMHkj17PorUpJTAoDpb3m2BRqUwgcRCa1ln83osSZ7X5fkxwx+gAr6OizRhP8n2NjE+l1NqXT1ma+1vaCYr7QQ==",
+    "AtkSharp/3.22.25.74": {
+      "sha512": "uHPidgASKeXiFMhI5bXk+mj5JluKttZwUInS5CbX1eE/83TBlzb9mkOnwa0Lc9RhQhlvf8Nko/Q75TcOSXVgmQ==",
       "type": "package",
-      "path": "atksharp/3.22.25.56",
+      "path": "atksharp/3.22.25.74",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "atksharp.3.22.25.56.nupkg.sha512",
+        "atksharp.3.22.25.74.nupkg.sha512",
         "atksharp.nuspec",
         "lib/netstandard2.0/AtkSharp.dll"
       ]
     },
-    "CairoSharp/3.22.25.56": {
-      "sha512": "DazuLty96Cf/QK3Ma2AgNHUVDnDvQyWfGnItUfhRwKpKEHKEnLQFx3Dme93nhGMKWF1llzUBGxn4NfUa2+h6Gw==",
+    "CairoSharp/3.22.25.74": {
+      "sha512": "Qz3E7Pvq3vPBCXjE40xfBWEWrd3Z0lUh9Xvwg725FNhgl6H3Sn+Jl8iPaANofd2k5eWrubZTEYpGrR4Z1rOD0A==",
       "type": "package",
-      "path": "cairosharp/3.22.25.56",
+      "path": "cairosharp/3.22.25.74",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "cairosharp.3.22.25.56.nupkg.sha512",
+        "cairosharp.3.22.25.74.nupkg.sha512",
         "cairosharp.nuspec",
         "lib/netstandard2.0/CairoSharp.dll"
       ]
@@ -201,77 +201,77 @@
         "lib/netstandard2.0/Eto.xml"
       ]
     },
-    "Eto.Platform.Gtk/2.5.0": {
-      "sha512": "T8R7wmcxmZb/pYFIdILtlJkk0YjlzDLJU242J01MT3lT/gtq07G+fg/UNIvQvt+LfnDeHCk/ITAzKUg8dgtNEg==",
+    "Eto.Platform.Gtk/2.5.2": {
+      "sha512": "fyBc1TELAa4YiDoRYG+aViY3I0LiSwnCw14ZDP0h7Oh+vQshdBtzDxOijuGsRD5qxoynHAX8e15zfxQLNynPOw==",
       "type": "package",
-      "path": "eto.platform.gtk/2.5.0",
+      "path": "eto.platform.gtk/2.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Eto-LICENSE.txt",
-        "eto.platform.gtk.2.5.0.nupkg.sha512",
+        "eto.platform.gtk.2.5.2.nupkg.sha512",
         "eto.platform.gtk.nuspec",
         "lib/netstandard2.0/Eto.Gtk.dll"
       ]
     },
-    "GdkSharp/3.22.25.56": {
-      "sha512": "xpciEunH3s2q9yP165Ci8Rq8+bHlblgtMTB5fbdoaOcd9tz1+06Xa48Yquu+WH7PUL/tq0CkJ8mmva0dJYojGw==",
+    "GdkSharp/3.22.25.74": {
+      "sha512": "GlY3N8BQda3/KUVmMLLwzTBMludCGRJSMh2w4OKvc3KX4J2Fs9tBKh7/qdUfRV+TqKEPhAKh4wwYeM1fzjk/rg==",
       "type": "package",
-      "path": "gdksharp/3.22.25.56",
+      "path": "gdksharp/3.22.25.74",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "gdksharp.3.22.25.56.nupkg.sha512",
+        "gdksharp.3.22.25.74.nupkg.sha512",
         "gdksharp.nuspec",
         "lib/netstandard2.0/GdkSharp.dll"
       ]
     },
-    "GioSharp/3.22.25.56": {
-      "sha512": "EcED8KN3ltTgfLoOCPc7T/nL2Ow5kGCYL2OGQM4zL7/tjAwCV9gUoPO3AFjqKAns0VekP2g9lODPcWn6gWdsgA==",
+    "GioSharp/3.22.25.74": {
+      "sha512": "YHaT6D+df57EajZ5EzgMFPz+vLA16eOb/sySEka2T5MnCQIhKUFBsJfJY0iMy1CBEBSJzVNrCFi4R55QivhaPg==",
       "type": "package",
-      "path": "giosharp/3.22.25.56",
+      "path": "giosharp/3.22.25.74",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "giosharp.3.22.25.56.nupkg.sha512",
+        "giosharp.3.22.25.74.nupkg.sha512",
         "giosharp.nuspec",
         "lib/netstandard2.0/GioSharp.dll"
       ]
     },
-    "GLibSharp/3.22.25.56": {
-      "sha512": "MgrEMJkTWC98CUanOk0NgOjNY86ZxwhQEecrXnvpcvuz5TkL2E4d5GqFCLtx0qiaHxiiQXB4/1WLkE9uzSEyYg==",
+    "GLibSharp/3.22.25.74": {
+      "sha512": "82PaZvqcSyHCYEnwTelhlqxT0wvwaNQNI2D9NlP5DzNZ9J0YMBDm9L9I2YmwJmJhcscu171kxpPs0eeRxHvbdg==",
       "type": "package",
-      "path": "glibsharp/3.22.25.56",
+      "path": "glibsharp/3.22.25.74",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "glibsharp.3.22.25.56.nupkg.sha512",
+        "glibsharp.3.22.25.74.nupkg.sha512",
         "glibsharp.nuspec",
         "lib/netstandard2.0/GLibSharp.dll"
       ]
     },
-    "GtkSharp/3.22.25.56": {
-      "sha512": "ng9f51otsEvq+Era1VslIsQ+4mI4ifb/waKzzQKGwcDEDq4sJz1boDqY0s6VSqWFdJuERRIbx8sR7n3wZFqwdA==",
+    "GtkSharp/3.22.25.74": {
+      "sha512": "n1DJKEC1N+A0YjaURm3Nuj3lwuwoZwNdMT2xxgLz3FauSECYVZIbPL9QFy4To+8i6fqaO3/1eqO3roi/qOJ+eQ==",
       "type": "package",
-      "path": "gtksharp/3.22.25.56",
+      "path": "gtksharp/3.22.25.74",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/GtkSharp.targets",
-        "gtksharp.3.22.25.56.nupkg.sha512",
+        "gtksharp.3.22.25.74.nupkg.sha512",
         "gtksharp.nuspec",
         "lib/netstandard2.0/GtkSharp.dll"
       ]
     },
-    "PangoSharp/3.22.25.56": {
-      "sha512": "/Ydjmfb8CatDzmL05h0Rfw5uq5uyY2QhAahi0/Em3NYK+WkfzSVI3fpn98jCSmy/mJzYeR0XRoNaE/nxNVzXrw==",
+    "PangoSharp/3.22.25.74": {
+      "sha512": "Dntn1HA3G5NzrQ7WrgiNfNhfHlEII61sZRvXwFGePZ/y9KN/jSzPST+gKu4Twm3C5kk130nBqbF2A1hET1PdeQ==",
       "type": "package",
-      "path": "pangosharp/3.22.25.56",
+      "path": "pangosharp/3.22.25.74",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/PangoSharp.dll",
-        "pangosharp.3.22.25.56.nupkg.sha512",
+        "pangosharp.3.22.25.74.nupkg.sha512",
         "pangosharp.nuspec"
       ]
     },
@@ -378,7 +378,7 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6.1": [
       "CardinalQemu >= 1.0.0",
-      "Eto.Platform.Gtk >= 2.5.0"
+      "Eto.Platform.Gtk >= 2.5.2"
     ]
   },
   "packageFolders": {
@@ -422,7 +422,7 @@
         "dependencies": {
           "Eto.Platform.Gtk": {
             "target": "Package",
-            "version": "[2.5.0, )"
+            "version": "[2.5.2, )"
           }
         },
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"

@@ -158,7 +158,7 @@
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Facades/System.Xml.XPath.XmlDocument.dll \
 	/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Facades/System.Xml.Xsl.Primitives.dll \
 	/assembly:/Users/ianmartinez/.nuget/packages/eto.forms/2.5.2/lib/netstandard2.0/Eto.dll \
-	/assembly:/Users/ianmartinez/.nuget/packages/eto.platform.xammac2/2.5.0/lib/xamarinmac20/Eto.XamMac2.dll \
+	/assembly:/Users/ianmartinez/.nuget/packages/eto.platform.xammac2/2.5.2/lib/xamarinmac20/Eto.XamMac2.dll \
 	/assembly:/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/bin/Debug/netstandard2.0/CardinalQemu.dll \
 	/assembly:/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu/bin/Debug/netstandard2.0/CardinalLib.dll \
 	/root-assembly:/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/bin/Debug/CardinalQemu.XamMac.exe \

@@ -13,6 +13,6 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)eto.platform.xammac2/2.5.0/build/Eto.Platform.XamMac2.props" Condition="Exists('$(NuGetPackageRoot)eto.platform.xammac2/2.5.0/build/Eto.Platform.XamMac2.props')" />
+    <Import Project="$(NuGetPackageRoot)eto.platform.xammac2/2.5.2/build/Eto.Platform.XamMac2.props" Condition="Exists('$(NuGetPackageRoot)eto.platform.xammac2/2.5.2/build/Eto.Platform.XamMac2.props')" />
   </ImportGroup>
 </Project>

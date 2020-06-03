@@ -9,7 +9,7 @@
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/actool/_PartialAppManifest.items
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/actool/_BundleResourceWithLogicalName.items
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/CardinalQemu.XamMac.csprojAssemblyReference.cache
+/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/CardinalQemu.XamMac.csproj.CoreCompileInputs.cache
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/CardinalQemu.XamMac.csproj.CopyComplete
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/CardinalQemu.XamMac.exe
 /Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/CardinalQemu.XamMac.pdb
-/Users/ianmartinez/GitHub/cardinal-qemu/src/CardinalQemu.XamMac/obj/Debug/CardinalQemu.XamMac.csproj.CoreCompileInputs.cache
